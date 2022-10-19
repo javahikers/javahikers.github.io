@@ -45,12 +45,12 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
 <meta property="og:description" content="建索引logstash建索引 去json数据生成网站生成的json格式的数据生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击下载数据 通过logstash导入json数据到Elasticsearch，参考我的博文Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch  使用_bulk api 建立索引 去官网下载数据acco">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://javahikers.github.io/2019/07/13/elasticsearch-query-operations/2019/07/13/elasticsearch-query-operations/001.png">
+<meta property="og:image" content="http://javahikers.github.io/2019/07/13/elasticsearch-query-operations/001.png">
 <meta property="og:updated_time" content="2022-10-11T12:20:16.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch5.6.9-查询操作">
 <meta name="twitter:description" content="建索引logstash建索引 去json数据生成网站生成的json格式的数据生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击下载数据 通过logstash导入json数据到Elasticsearch，参考我的博文Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch  使用_bulk api 建立索引 去官网下载数据acco">
-<meta name="twitter:image" content="http://javahikers.github.io/2019/07/13/elasticsearch-query-operations/2019/07/13/elasticsearch-query-operations/001.png">
+<meta name="twitter:image" content="http://javahikers.github.io/2019/07/13/elasticsearch-query-operations/001.png">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
     
@@ -219,7 +219,13 @@ ga('send', 'pageview');
 </code></pre></li>
 <li>命令行建索引<pre><code>curl -H &apos;Content-Type: application/json&apos; -XPOST &apos;localhost:9200/javahikers/acount/_bulk?pretty&amp;refresh&apos; --data-binary &apos;@accounts.json&apos;
 </code></pre></li>
-<li>或者postman工具建索引<div><br><img src="/2019/07/13/elasticsearch-query-operations/2019/07/13/elasticsearch-query-operations/001.png"><br></div>
+<li>或者postman工具建索引<div><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/07/13/elasticsearch-query-operations/001.png" alt title referrerpolicy="no-referrer">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br></div>
 
 </li>
 </ul>

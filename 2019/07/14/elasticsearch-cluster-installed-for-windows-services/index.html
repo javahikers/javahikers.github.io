@@ -45,12 +45,12 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
 <meta property="og:description" content="在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分elasticsearch分布式安装本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击下载文件 进入各自的bin目录，安装并启动服务D:\downloadsoftware\elasticsearch\elasticsearch-5">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png">
+<meta property="og:image" content="http://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png">
 <meta property="og:updated_time" content="2022-10-11T12:20:16.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch5.6.9-elasticsearch集群安装为windows服务">
 <meta name="twitter:description" content="在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分elasticsearch分布式安装本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击下载文件 进入各自的bin目录，安装并启动服务D:\downloadsoftware\elasticsearch\elasticsearch-5">
-<meta name="twitter:image" content="http://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png">
+<meta name="twitter:image" content="http://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
     
@@ -218,7 +218,13 @@ D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave1\bin&gt;elasticsearc
 D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearch-service.bat install elasticsearchSlave2
 D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearch-service.bat start elasticsearchSlave2
 </code></pre><p>安装好之后可以在windows服务窗口查看已安装的服务</p>
-<p><div><br><img src="/2019/07/14/elasticsearch-cluster-installed-for-windows-services/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png"><br></div><br>如果遇到安装失败,可能是文件config/jvm.options 里面的参数设置过大导致，将下面的参数调小一点</p>
+<p><div><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png" alt title referrerpolicy="no-referrer">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br></div><br>如果遇到安装失败,可能是文件config/jvm.options 里面的参数设置过大导致，将下面的参数调小一点</p>
 <pre><code>-Xms1g
 -Xmx1g
 </code></pre><h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
