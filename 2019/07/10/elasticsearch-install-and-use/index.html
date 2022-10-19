@@ -45,13 +45,13 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
 <meta property="og:description" content="本文以windows环境为例，介绍Elasticsearch的安装使用，linux环境请下载tar包，并在linux环境通过命令行解压 elasticsearch单实例和相关插件的安装elasticsearch下载安装去官网下载安装版本5.6.9，跟着官网教程将工程跑起来  解压之后，启动bin目录下的脚本elasticsearch.bat 页面访问http://localhost:9200">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://javahikers.github.io/2019/07/10/elasticsearch-install-and-use/2019/07/10/elasticsearch-install-and-use/001.png">
-<meta property="og:image" content="http://javahikers.github.io/2019/07/10/elasticsearch-install-and-use/2019/07/10/elasticsearch-install-and-use/002.png">
+<meta property="og:image" content="http://javahikers.github.io/2019/07/10/elasticsearch-install-and-use/001.png">
+<meta property="og:image" content="http://javahikers.github.io/2019/07/10/elasticsearch-install-and-use/002.png">
 <meta property="og:updated_time" content="2022-10-11T12:20:16.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch5.6.9-安装使用">
 <meta name="twitter:description" content="本文以windows环境为例，介绍Elasticsearch的安装使用，linux环境请下载tar包，并在linux环境通过命令行解压 elasticsearch单实例和相关插件的安装elasticsearch下载安装去官网下载安装版本5.6.9，跟着官网教程将工程跑起来  解压之后，启动bin目录下的脚本elasticsearch.bat 页面访问http://localhost:9200">
-<meta name="twitter:image" content="http://javahikers.github.io/2019/07/10/elasticsearch-install-and-use/2019/07/10/elasticsearch-install-and-use/001.png">
+<meta name="twitter:image" content="http://javahikers.github.io/2019/07/10/elasticsearch-install-and-use/001.png">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
     
@@ -240,7 +240,13 @@ http.cors.allow-origin: &quot;*&quot;
 <li>页面访问<code>http://localhost:5601</code></li>
 </ol>
 <hr>
-<h1 id="elasticsearch分布式安装"><a href="#elasticsearch分布式安装" class="headerlink" title="elasticsearch分布式安装"></a>elasticsearch分布式安装</h1><h2 id="拷贝两份相同的文件，作为两个备机使用"><a href="#拷贝两份相同的文件，作为两个备机使用" class="headerlink" title="拷贝两份相同的文件，作为两个备机使用"></a>拷贝两份相同的文件，作为两个备机使用</h2><div><br><img src="/2019/07/10/elasticsearch-install-and-use/2019/07/10/elasticsearch-install-and-use/001.png"><br></div>
+<h1 id="elasticsearch分布式安装"><a href="#elasticsearch分布式安装" class="headerlink" title="elasticsearch分布式安装"></a>elasticsearch分布式安装</h1><h2 id="拷贝两份相同的文件，作为两个备机使用"><a href="#拷贝两份相同的文件，作为两个备机使用" class="headerlink" title="拷贝两份相同的文件，作为两个备机使用"></a>拷贝两份相同的文件，作为两个备机使用</h2><div><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/07/10/elasticsearch-install-and-use/001.png" alt title referrerpolicy="no-referrer">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br></div>
 
 <hr>
 <h2 id="配置config-elasticsearch-yml文件"><a href="#配置config-elasticsearch-yml文件" class="headerlink" title="配置config/elasticsearch.yml文件"></a>配置config/elasticsearch.yml文件</h2><p>主配置：</p>
@@ -265,7 +271,13 @@ network.host: 127.0.0.1
 http.port: 9202
 discovery.zen.ping.unicast.hosts: [&quot;127.0.0.1&quot;]
 </code></pre><p>配置说明：cluster.name集群名称。node.name节点名称。node.master为true表示自己有机会成为主节点，不配置时默认为true。network.host绑定ip，如果不配置默认绑定127.0.0.1。http.port绑定端口,如果不配置默认绑定9200。discovery.zen.minimum_master_nodes防止脑裂配置项，表示至少需要几个节点才能组成集群。<br>slave1和slave2指定的端口和默认端口不要冲突,启动bin目录下的脚本elasticsearch.bat，先启动master，再启动slave1和slave2，访问<code>http://localhost:9100/</code><br>每次手工启动上面3个es服务会显得很笨拙，可以将它们安装为windows服务，安装过程也很简单，请参考我的另一篇博文，<a href="https://javahikers.gitee.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/" target="_blank" rel="noopener">《Elasticsearch5.6.9-elasticsearch集群安装为windows服务》</a></p>
-<div><br><img src="/2019/07/10/elasticsearch-install-and-use/2019/07/10/elasticsearch-install-and-use/002.png"><br></div>
+<div><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/07/10/elasticsearch-install-and-use/002.png" alt title referrerpolicy="no-referrer">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br></div>
 
 <p>设想1：集群扩容非常的容易,可以再添加slave3,slave4…<br>设想2：如果将slave1和slave2也加上这段配置</p>
 <pre><code>http.cors.enabled: true
