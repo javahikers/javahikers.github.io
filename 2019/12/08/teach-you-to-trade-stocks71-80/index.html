@@ -45,46 +45,46 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
 <meta property="og:description" content="教你炒股票71：线段划分标准的再分辨 (2007-08-16 23:02:06)虽然67课已经给出了线段划分的标准，但由于那里用的是比较抽象的类数学语言，所以理解上可能还有困难，因此，逐一进行再分辨。 首先要分辨的，是特征序列中元素的包含关系。注意，特征序列的元素包含关系，首先的前提是这元素都在一特征序列里，如果两个不同的特征序列之间的元素，讨论包含关系是没意义的。显然，特征序列的元素的方向，和其">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif4chvqjj20mo0admyx.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif4yg09vj20gy06ztaa.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif54j215j20ia07rabi.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif5g7t2hj20is06yabg.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif5sfdwmj20n508jdi6.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif60hbc9j20nx0a1wgz.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif68s5ckj20jj09ita5.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif7tij65j20n60bkwhf.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif7zr3x8j20qc0ct41h.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1g9uxcxayllj20e80ao0to.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaiff43awvj20zk0iq44u.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaiffln0oxj20zk0ks46z.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifg5ud32j20p006wdgr.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifjfeyi7j20p00dwt96.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifjp56kyj20p00dwmxm.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifm5mvfcj20sg0g1n52.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifq3m9jxj20p00dwaje.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifsvggyyj20p00dwth5.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifxtr4wcj20qe08jq4g.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifycp98nj20p00dw41l.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaifyv8egqj20qe0duaff.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaig2tfzklj20zk0ik0z5.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaig3a11k5j20zj0kyq6r.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaig3m4hb1j20b309saa6.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaigebsaqoj20zk0b6dhw.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaiggdva4vj20zk0gj11c.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaigha91ucj20we0mb11j.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaighmaqp4j20w30lu7bj.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaighudbapj20wc0jg45t.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaigiodx82j20wb0m0aie.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaigj4q7lvj20wa0lq10p.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaigjs73q7j20w60m3jzc.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaigpi1ggej20zk0jzqaj.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaigpwftocj20u00gqab6.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaigq5yzwvj20qe0dudml.jpg">
-<meta property="og:updated_time" content="2022-10-11T12:20:16.696Z">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课001.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课002.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课003.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课004.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课005.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课006.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课007.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课008.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课009.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课010.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课011.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课012.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课013.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课014.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课015.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课016.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课017.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课018.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课019.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课020.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课021.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课022.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课023.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课024.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课025.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课026.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课027.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课028.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课029.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课030.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课031.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课032.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课033.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课034.jpg">
+<meta property="og:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课035.jpg">
+<meta property="og:updated_time" content="2022-10-23T07:01:27.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="教你炒股票71-80">
 <meta name="twitter:description" content="教你炒股票71：线段划分标准的再分辨 (2007-08-16 23:02:06)虽然67课已经给出了线段划分的标准，但由于那里用的是比较抽象的类数学语言，所以理解上可能还有困难，因此，逐一进行再分辨。 首先要分辨的，是特征序列中元素的包含关系。注意，特征序列的元素包含关系，首先的前提是这元素都在一特征序列里，如果两个不同的特征序列之间的元素，讨论包含关系是没意义的。显然，特征序列的元素的方向，和其">
-<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/80673b2agy1gaif4chvqjj20mo0admyx.jpg">
+<meta name="twitter:image" content="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课001.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
     
@@ -250,23 +250,23 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif4chvqjj20mo0admyx.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课001.jpg" alt="教你炒股票71-80课001" title="教你炒股票71-80课001" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课001</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif4yg09vj20gy06ztaa.jpg" alt="2.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课002.jpg" alt="教你炒股票71-80课002" title="教你炒股票71-80课002" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">2.jpg</div>
+                <div class="image-caption">教你炒股票71-80课002</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif54j215j20ia07rabi.jpg" alt="3.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课003.jpg" alt="教你炒股票71-80课003" title="教你炒股票71-80课003" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">3.jpg</div>
+                <div class="image-caption">教你炒股票71-80课003</div>
             </figure>
 <p>那么，现在只剩下最后一种情况，就是最早破坏那笔就是转折点下来的第一笔，这种情况下，这一笔，如果后面延伸出成为线段的走势，那么这一笔就属于中间地带，既不能说是前面一段的特征序列，更不能说是后一段的特征序列，在这里情况下，即使出现似乎有特征序列的包含关系的走势，也不能算，因为，这一笔不是严格地属于前一段的特征序列，属于待定状态，一旦该笔延伸出三笔以上，那么新的线段就形成了，那时候谈论前一线段特征序列的包含关系就没意义了。</p>
 <p>总之，上面说得很复杂，其实就是一句话，特征序列的元素要探讨包含关系，首先必须是同一特征序列的元素，这在理论上十分明确的。</p>
@@ -274,24 +274,24 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif5g7t2hj20is06yabg.jpg" alt="4.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课004.jpg" alt="教你炒股票71-80课004" title="教你炒股票71-80课004" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">4.jpg</div>
+                <div class="image-caption">教你炒股票71-80课004</div>
             </figure>
 <p>这种情况还有更复杂一点的情况，就是第三笔完全在第一笔的范围内，这样，这三笔就分不出是向上还是向下，这样也就定义不了什么特征序列，为什么？因为特征序列是和走势相反的，而走势连方向都没有，那怎么知道哪个元素属于特征序列？这种情况，无非两种最后的结果：1、最终还是先破了第一笔的结束位置，这时候，新的线段显然成立，旧线段还是被破坏了；2、最终，先破第一笔的开始位置，这样，旧线段只被一笔破坏，接着就延续原来的方向，那么，显然旧线段依然延续，新线段没有出现。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif5sfdwmj20n508jdi6.jpg" alt="5.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课005.jpg" alt="教你炒股票71-80课005" title="教你炒股票71-80课005" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">5.jpg</div>
+                <div class="image-caption">教你炒股票71-80课005</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif60hbc9j20nx0a1wgz.jpg" alt="6.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课006.jpg" alt="教你炒股票71-80课006" title="教你炒股票71-80课006" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">6.jpg</div>
+                <div class="image-caption">教你炒股票71-80课006</div>
             </figure>
 <p>在67课里，把线段的划分分为两种情况，显然，分清楚是哪种情况，对划分线段十分关键。其实，在那里已经把问题说得很清楚，判断的标准只有一个，就是特征序列的分型中，第一和第二元素间不存在特征序列的缺口。从上面的分析可以知道，这个分型结构中所谓特征序列的元素，其实是站在假设旧线段没被破坏的角度说的，而就像所有的分型一样，就算是一般K线的，都是前后两段走势的分水岭、连接点。这和包含的情况不同，包含的关系是对同一段说的，而分型，必然是属于前后的，这时候，在构成分型的元素里，如果线段被最终破坏，那后面的元素肯定不是特征序列里的，也就是说，这时候，分型右侧的元素肯定不属于前后任何一段的特征序列。</p>
 <p>这个道理其实很明白，例如前一段是向上的，那么特征序列元素是向下的，而在顶分型的右侧元素，如果最终真满足破坏前线段的要求，那么后线段的方向就是向下的，其特征序列就是向上的，而顶分型的右侧元素是向下的，显然不属于后一段的特征元素，而该顶分型的右侧元素又属于后一段，那么显然更不是前一段的特征元素。所以，对于顶分型的右侧特征元素，只是一般判断方面的一种方便的预设，就如同几何里面，添加辅助线去证明问题一样，辅助线不属于图形本身，就如同顶分型的右侧特征元素其实不一定属于任何的特征元素，但对研究有帮助，当然是要大力去用的，如此而已。</p>
@@ -300,33 +300,33 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif68s5ckj20jj09ita5.jpg" alt="7.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课007.jpg" alt="教你炒股票71-80课007" title="教你炒股票71-80课007" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">7.jpg</div>
+                <div class="image-caption">教你炒股票71-80课007</div>
             </figure>
 <p>这里还要强调一下包含的问题，上面的分析知道，在这假设的转折点前后那两元素，是不存在包含关系的，因为，这两者已经被假设不是同一性质的东西，不一定是同一特征序列的；但假设的转折点后的顶分型的元素，是可以应用包含关系的。为什么？因此，这些元素间，肯定是同一性质的东西，或者就是原线段的延续，那么就同是原线段的特征序列中，或者就是新线段的非特征序列中，反正都是同一类的东西，同一类的东西，当然可以考察包含关系。</p>
 <p>估计看了上面的话，很多人更晕了。下面有几个图，各位可以仔细揣摩一下。但最好还是习惯从定义出发。另外，大盘网友问到的那个图，显然，根据定义，是两个线段，而今天42-44的分段，显然也是成立的。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif7tij65j20n60bkwhf.jpg" alt="8.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课008.jpg" alt="教你炒股票71-80课008" title="教你炒股票71-80课008" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">8.jpg</div>
+                <div class="image-caption">教你炒股票71-80课008</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaif7zr3x8j20qc0ct41h.jpg" alt="9.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课009.jpg" alt="教你炒股票71-80课009" title="教你炒股票71-80课009" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">9.jpg</div>
+                <div class="image-caption">教你炒股票71-80课009</div>
             </figure>
 <p>注意，下图最后一个有问题，请看课程81里的更正说明。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1g9uxcxayllj20e80ao0to.jpg" alt="image.png" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课010.jpg" alt="教你炒股票71-80课010" title="教你炒股票71-80课010" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">image.png</div>
+                <div class="image-caption">教你炒股票71-80课010</div>
             </figure>
 <h3 id="教你炒股票72：本ID已有课程的再梳理-2007-08-21-22-37-20"><a href="#教你炒股票72：本ID已有课程的再梳理-2007-08-21-22-37-20" class="headerlink" title="教你炒股票72：本ID已有课程的再梳理 (2007-08-21 22:37:20)"></a>教你炒股票72：本ID已有课程的再梳理 (2007-08-21 22:37:20)</h3><p>任何事情，都有缘起。本ID是个大杂家，本ID现实中最终的落脚处，是文化的总构建，所谓三教九流，彻底穷源地玩弄一把。虽然，经济上，本ID早就可以天天腐败什么活都不干了，但现在又没老到要在书斋里天天写书的地步，本ID觉得，那至少是40岁以后才能干的事情。因此，本ID在网上写东西，纯粹是顺着形势来，并没有什么计划。</p>
 <p>写关于股票的事情，对于本ID来说，不过是把本ID这十几年天天干的事情复述一下。正如在课程开头，本ID说的””教你炒股票”这样的题目，全中国不会有第二人比本ID更适合写的。” 当然，这种话招人恨的，不过却是事实。</p>
@@ -339,9 +339,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaiff43awvj20zk0iq44u.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课011.jpg" alt="教你炒股票71-80课011" title="教你炒股票71-80课011" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课011</div>
             </figure>
 <p>站在纯理论的角度，形态学是最根本的。形态学，从本质上就是几何，这部分内容，是无须任何前提的。以前说的本ID理论成立的前提，其实并不是针对这部分的，主要是针对动力学部分。因此，就算一个庄家自己全买了，一个人天天自我交易，也永远逃不出形态学画的圈圈。而动力学方面的东西就不同了，必须有本ID要求的那两个前提：价格充分有效市场里的非完全绝对趋同交易。</p>
 <p>动力学，是属于物理范畴的，但站在更高的层次上看物理，物理的本质就是几何，当然，这是所有物理学家都不可能认同的，但如果用一些几何结构就可以把所有物理的常量给搞掂，那物理学家不认同也是白搭。同样道理，本ID理论里的动力学部分，本质上也是几何，只是这种几何比较特别，需要把价格充分有效市场里的非完全绝对趋同交易作为前提转化为某些几何结构，然后构造出理论的证明来。</p>
@@ -352,9 +352,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaiffln0oxj20zk0ks46z.jpg" alt="2.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课012.jpg" alt="教你炒股票71-80课012" title="教你炒股票71-80课012" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">2.jpg</div>
+                <div class="image-caption">教你炒股票71-80课012</div>
             </figure>
 <p>就算按照这么简单的方法，也可以很容易判断现在在日线上的操作思路，例如，去年5月和今年5月后的调整，算是同级别的，那么，其后的卖点就是，万一回拉4335点之下，任何第一次向4335点上的与回拉级别相同的不创新高的反抽都是卖点。如果一直没有回拉回到4335点，又在上面形成新的同级别中枢，那么操作的标杆就进一步提到那个中枢上，如此类推。按照这种方法，那么从2005年中到现在，你都应该持股不动，为什么？因为没有卖点。当然，实际操作，要针对具体个股，说指数只是举例子。个股上，看000777在日线，6月20前后的一段，就可以看出类似的效果；但如果你是看周线图的，那么现在的卖段还没有出现，而且可以明确地看出，其6-7月份的调整，不过是突破历史高位后的回抽过程，站在更大的视野上，看到更大的方向，如此而已。</p>
 <p>当然，上面只是说如果只用形态学，也可以进行操作，但实际上，当然是动力学、形态学一起用更有效。所以，千万别认为以后就只用形态学了。不过这里有一个用处，就是那些对背驰、区间套没什么信心的，可以先多从形态学着手。而且，形态分析不好，也动力不起来。</p>
@@ -362,9 +362,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifg5ud32j20p006wdgr.jpg" alt="3.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课013.jpg" alt="教你炒股票71-80课013" title="教你炒股票71-80课013" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">3.jpg</div>
+                <div class="image-caption">教你炒股票71-80课013</div>
             </figure>
 <p>下面，本ID给出一个懒人线路图：</p>
 <p>分型-笔-线段-最小级别中枢-各级别中枢、走势类型</p>
@@ -385,9 +385,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifjfeyi7j20p00dwt96.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课014.jpg" alt="教你炒股票71-80课014" title="教你炒股票71-80课014" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课014</div>
             </figure>
 <p>当然，对于大多数人的生命来说，可能最现实的机会，只是一个季线级别的上涨过程，这个过程没结束，没见到那新的年中枢，人已经没了。这个年中枢的上移过程，有时候需要N代人的见证。看看美国股市的图，现在还没看到那新的年中枢，依然在年中枢的上移中，想想美国股市有多少年了？</p>
 <p>所以，对于一个最现实的获利来说，一个季度甚至月线的中枢上移，已经是足够好的一生最大的，在单个品种上的长线获利机会。</p>
@@ -397,9 +397,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifjp56kyj20p00dwmxm.jpg" alt="2.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课015.jpg" alt="教你炒股票71-80课015" title="教你炒股票71-80课015" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">2.jpg</div>
+                <div class="image-caption">教你炒股票71-80课015</div>
             </figure>
 <p>找到了行业，就到了具体企业的寻找。对于长线投资来说，最牛的股票与最牛的企业，最终是必然对应的。没有人是神仙，谁都不知道哪个是最后的获胜者。但谁都知道，最终的获胜者最终必然要到，例如10万亿人民币的市值，那么，他的市值必然要经过任何一个低于10万亿人民币的数。</p>
 <p>这就足够了，这就马上可以百分百推理出，这个企业，或者是当下的龙头，或者是在今后某一时刻超越当下龙头的企业。有这样一个推论，本ID就可以构建出一个最合理的投资方案。</p>
@@ -424,9 +424,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifm5mvfcj20sg0g1n52.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课016.jpg" alt="教你炒股票71-80课016" title="教你炒股票71-80课016" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课016</div>
             </figure>
 <p>明白了政策的特点，对政策，就没必要如洪水猛兽，以下几点是可以注意的：</p>
 <p>一、一个最终结果决定于价格与价值的相关关系。当市场进入低估阶段，就要更注意向多政策的影响，反之，在市场的泡沫阶段，就要更注意向空调控的影响。</p>
@@ -451,9 +451,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifq3m9jxj20p00dwaje.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课017.jpg" alt="教你炒股票71-80课017" title="教你炒股票71-80课017" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课017</div>
             </figure>
 <p>为了表彰这些残废人士的惊人业绩，本ID对其中几只不点名地表扬一下：</p>
 <p>一、那年夏天后，最后的一吻，市场就走入漫漫熊途，你也留下一个个向下的惊人缺口，大概除了本ID，没有人知道你的痛苦，那高高的山冈，你只能用一个个除权缺口去追赶大盘下跌的速度，你在最悲壮时，依然站在实际的山腰之上，离那令你疼的顶峰依然不远。终于，你熬过那最后的血腥，春天来了，猫儿又开始叫春了，你跨过那一个个的缺口，冲出那曾经绝望的顶峰，原来，山峰之外依然有山峰，你应该释怀了。</p>
@@ -475,9 +475,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifsvggyyj20p00dwth5.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课018.jpg" alt="教你炒股票71-80课018" title="教你炒股票71-80课018" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课018</div>
             </figure>
 <p>而倒出这样的量，实际需要的筹码并不要太多，因为，不可能全天的交易都是一方搞出来的。倒的时候，技术高的，完全可以做到顺便就把差价给弄了而筹码尽量不丢。但注意，这种折腾，一定是在底部或相对底部的位置，这样，最好就在庄家成本的附近，这样操作的难度就小多了。如果庄家给你玩恼火了，不玩了，撤了，一定要捣乱，不能让他顺利出去。只要你能让他亏钱出去，就是成功。一句话，就是不能让他挣钱跑。而且，在日常的折腾中，一定要弄各类手段去垫高其成本。</p>
 <p>有些手法，和经验有关，不是一般人能干的。例如，要充分利用另外的分力的力量。庄家只是其中的一个分力，如果你能利用好其他分力，那庄家也只有给你折腾的份。</p>
@@ -494,9 +494,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifxtr4wcj20qe08jq4g.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课019.jpg" alt="教你炒股票71-80课019" title="教你炒股票71-80课019" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课019</div>
             </figure>
 <p>根据缺口的是否回补，就构成了对走势行情力度的一个分类。一、不回补，这显然是强势的；二、回补后继续新高或新低，这是平势的；三、回补后不能新高、新低，因而出现原来走势的转折，这是弱势的。</p>
 <p>一般来说，突破性缺口极少回补，而中继性缺口，也就是趋势延续中的缺口，回补的几率对半，但都一定继续新高或新低，也就是至少是平势的。而一旦缺口回补后不再新高、新低，那么就意味着原来的趋势发生逆转，这是衰竭性缺口的特征，一旦出现这种情况，就一定至少出现较大级别的调整，这级别至少大于缺口时所延续的趋势的级别。也就是说，一个日线级别趋势的衰竭性缺口，至少制造一个周线级别的调整。而一个5分钟级别的衰竭性缺口，至少制造一个30分钟级别的调整。</p>
@@ -530,16 +530,16 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifycp98nj20p00dw41l.jpg" alt="2.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课020.jpg" alt="教你炒股票71-80课020" title="教你炒股票71-80课020" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">2.jpg</div>
+                <div class="image-caption">教你炒股票71-80课020</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaifyv8egqj20qe0duaff.jpg" alt="3.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课021.jpg" alt="教你炒股票71-80课021" title="教你炒股票71-80课021" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">3.jpg</div>
+                <div class="image-caption">教你炒股票71-80课021</div>
             </figure>
 <p>有一种复杂的情况，在今天的80-83的划分中就出现了。就是对80-81，出现了第一笔的笔破坏，然后接着是一个符合线段标准的走势A，但没有创新低，这样当然不能算是原线段的延续，但线段的破坏也不能算，为什么？因为没有符合要求的三笔。接着，一个反弹，也满足线段的要求，然后就转头继续创新低。这里有一个细微的区别，如果这个反弹只是一笔，那么就没有破坏走势A，后面接着的新底，就意味着走势A依然延续，所以走势A就是原来80-81的延续。</p>
 <p>但现在的问题是，这个反弹把走势A给线段破坏了，因此，说走势A依然延续是显然不对的，所以后面的走势和走势A无关，因此，唯一合理的划分，就是把第一笔的笔破坏、走势A、一个反弹合成一个线段，这完全满足线段的定义，所以就有了81-82。</p>
@@ -566,9 +566,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaig2tfzklj20zk0ik0z5.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课022.jpg" alt="教你炒股票71-80课022" title="教你炒股票71-80课022" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课022</div>
             </figure>
 <p>选择好了开始点，就可以进行分段了。如果熟练了，就可以直接分段，因为分型、笔都可以心算就知道，直接就可以进行分段；但如果不熟练，还是先从分型开始，然后笔，再线段，这样比较稳妥。</p>
 <p>在实际划分中，会碰到一些古怪的线段。其实，所谓的古怪，是一点都不古怪，只是一般人心里有一个印象，觉得线段都是一波比一波高或低，很简单那种，其实，线段完全不必要这样。一般来说，在类似单边的走势中，线段都很简单，不会有太复杂的情况，而在震荡中，线段出现所谓古怪的可能性就大增了。</p>
@@ -581,9 +581,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaig3a11k5j20zj0kyq6r.jpg" alt="2.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课023.jpg" alt="教你炒股票71-80课023" title="教你炒股票71-80课023" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">2.jpg</div>
+                <div class="image-caption">教你炒股票71-80课023</div>
             </figure>
 <p>这个向下的线段，如果没破该向上笔的底，那么就可以肯定，由这向上的笔可以延伸出一个线段来，这时候，线段B肯定被破坏了。</p>
 <p>注意，这个例子中有一个最关键的前提，就是线段B已经确认线段破坏了他前面的线段，如果线段B对前面线段的破坏都没确认，那就先确认，这里的分析都不适用了。</p>
@@ -591,9 +591,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaig3m4hb1j20b309saa6.jpg" alt="3.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课024.jpg" alt="教你炒股票71-80课024" title="教你炒股票71-80课024" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">3.jpg</div>
+                <div class="image-caption">教你炒股票71-80课024</div>
             </figure>
 <p>另外，一定要注意，对于第二种情况的第二特征序列的分型判断，必须严格按照包含关系的处理来，这里不存在第一种情况中的假设分界点两边不能进行包含关系处理的要求。为什么？因为在第一种情况中，如果分界点两边出现特征序列的包含关系，那证明对原线段转折的力度特别大，那当然不能用包含关系破坏这种力度的呈现。而在第二种情况的第二特征序列中，其方向是和原线段一致，包含关系的出现，就意味着原线段的能量充足，而第二种情况，本来就意味着对原线段转折的能量不足，这样一来，当然就必须按照包含关系来。</p>
 <p>通过上面的讲解，应该没有任何线段问题能难倒各位了，当然前提是能把上面的内容搞明白。</p>
@@ -633,18 +633,18 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaigebsaqoj20zk0b6dhw.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课025.jpg" alt="教你炒股票71-80课025" title="教你炒股票71-80课025" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课025</div>
             </figure>
 <p>其实，明白了上几节课，这两个图一定都不难分辨，首先，前提是这两个的前面都没有其他走势了，否则这种分析没意义，前面有其他走势，就有这很多不同的可能变化。</p>
 <p>这些图形好象很复杂，其实，只要找到其特征序列就可以。由于34都有第一种类型的笔突破，所以后面的特征序列就很清楚了，34、56、78，其中前两者可以进行包含关系处理，因此可以合并为36（指区间），所以78显然和12、36构成底分型，第一种类型笔破坏后延伸出标准的特征序列分型，那显然满足线段破坏的标准。上面的分析，对两个图都是成立的，因此，两者都至少有两个线段。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaiggdva4vj20zk0gj11c.jpg" alt="2.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课026.jpg" alt="教你炒股票71-80课026" title="教你炒股票71-80课026" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">2.jpg</div>
+                <div class="image-caption">教你炒股票71-80课026</div>
             </figure>
 <p>对于上图，显然89属于第一种情况的笔破坏，后面也延伸出特征序列分型，所以左图的第二线段也被破坏了，所以就是三线段。</p>
 <p>下图，由于9-10是78的包含关系，所以可以认为线段二延伸到了10，而后面的10-11，只有一笔，因此必须再看两笔才知道是否满足第一种类型后继续延伸出特征序列分型的基本线段破坏要求，所以该图属于未完成的图。如果9跌破7，而10的位置不变，那么就显然是三线段了。</p>
@@ -655,43 +655,43 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaigha91ucj20we0mb11j.jpg" alt="3.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课027.jpg" alt="教你炒股票71-80课027" title="教你炒股票71-80课027" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">3.jpg</div>
+                <div class="image-caption">教你炒股票71-80课027</div>
             </figure>
 <p>600139：看周线，9月7日这周高开后，没有突破前一周高位，形成典型的顶分型走势。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaighmaqp4j20w30lu7bj.jpg" alt="4.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课028.jpg" alt="教你炒股票71-80课028" title="教你炒股票71-80课028" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">4.jpg</div>
+                <div class="image-caption">教你炒股票71-80课028</div>
             </figure>
 <p>600737：看日线，这属于复杂的，有所谓的包含关系。2007年9月4、5、6三天，是典型的包含关系，然后7日这天，破坏包含关系，并没有创14.28元新高，典型的顶分型结构。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaighudbapj20wc0jg45t.jpg" alt="5.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课029.jpg" alt="教你炒股票71-80课029" title="教你炒股票71-80课029" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">5.jpg</div>
+                <div class="image-caption">教你炒股票71-80课029</div>
             </figure>
 <p>注意，顶分型结构后不一定有底分型结构与顶分型结构有一个非共用的K线，也就是不一定构成笔，但一般来说，如果顶分型后有效跌破5日线，那就没什么大戏了，就算不用搞个笔出来，也会用时间换空间，折腾好一阵子。</p>
 <p>000802，日线，200070809，形成典型的顶分型结构，后面没有形成笔，但在5日线上下折腾了好几下，使得几条均线吻起来，才再次兴奋。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaigiodx82j20wb0m0aie.jpg" alt="6.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课030.jpg" alt="教你炒股票71-80课030" title="教你炒股票71-80课030" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">6.jpg</div>
+                <div class="image-caption">教你炒股票71-80课030</div>
             </figure>
 <p>但如果没有有效跌破5日线，那往往只是中继：</p>
 <p>000938，20070904构成顶分型，然后假突破5日线后继续上攻。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaigj4q7lvj20wa0lq10p.jpg" alt="7.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课031.jpg" alt="教你炒股票71-80课031" title="教你炒股票71-80课031" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">7.jpg</div>
+                <div class="image-caption">教你炒股票71-80课031</div>
             </figure>
 <p>注意，利用顶分型进行操作时，必须配合小级别的图。本质上，分型都是某小级别的第一、二买卖点成立后出现的。用卖点来说，如果第二卖点后次级别跌破后不形成盘整背驰，那么调整的力度肯定大，如果时间一延长，就搞出笔来了，特别日线上的向下笔，都是比较长时间的较大调整形成的，那肯定是要有效破5日线的，而第二卖点后次级别跌破形成盘整背驰，那调整最多就演化成更大级别的震荡，其力度就有限，一般5日线不会被有效跌破。</p>
 <p>利用上面的性质，实质上并不需要在顶分型全部形成后再操作，例如000938，0904那天，不需要等到收盘，而在在其冲高时，一看在前一天高位下形成小级别卖点，就可以坚决出掉，然后下来形成顶分型，等跌破5日线后，看是否出现小级别的盘整背驰，一旦出现，就回补，所以就有了9月5日的走势，这样，等于打了一个10%多的短差。</p>
@@ -702,9 +702,9 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaigjs73q7j20w60m3jzc.jpg" alt="8.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课032.jpg" alt="教你炒股票71-80课032" title="教你炒股票71-80课032" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">8.jpg</div>
+                <div class="image-caption">教你炒股票71-80课032</div>
             </figure>
 <p>最后可以看一个综合的例子，600008：</p>
 <p>808日，顶分型后跌破5日线，然后调整到均线吻起来再启动。903日，顶分型后没有有效跌破5日线，然后继续上涨，第二天有一个盘整背驰的回补点。</p>
@@ -723,27 +723,27 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaigpi1ggej20zk0jzqaj.jpg" alt="1.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课033.jpg" alt="教你炒股票71-80课033" title="教你炒股票71-80课033" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">1.jpg</div>
+                <div class="image-caption">教你炒股票71-80课033</div>
             </figure>
 <p>那么，这么明确地知道了这一点，按照市场的逻辑，正如昨天的课程里反复强调的”注意，顶分型的时候是形成顶分型那天冲高卖，而不是收盘等顶分型都很明确了再走”，那么对于周K线，这一点是一样的。</p>
 <p>而日线上，大盘在9月7日的顶分型已经明白无误。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaigpwftocj20u00gqab6.jpg" alt="2.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课034.jpg" alt="教你炒股票71-80课034" title="教你炒股票71-80课034" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">2.jpg</div>
+                <div class="image-caption">教你炒股票71-80课034</div>
             </figure>
 <p>二、中枢震荡的卖点都是出现在向上离开中枢时</p>
 <p>这也是本ID理论中最简单的结论了，那么，在最近形成的5分钟中枢中，任何向上离开5333点的震荡，最终都将形成卖点，当然，该卖点后回抽如果回不到5333点，可能形成第三类买点，但这是卖点后的事情，没有任何可能比当下的卖点更重要。而且，股票的交易规则，没有规定卖了就不能再买。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ww1.sinaimg.cn/large/80673b2agy1gaigq5yzwvj20qe0dudml.jpg" alt="3.jpg" title referrerpolicy="no-referrer">
+                    <img src="https://gitee.com/javahiker/pic_media/raw/master/money/stock/教你炒股票71-80/教你炒股票71-80课035.jpg" alt="教你炒股票71-80课035" title="教你炒股票71-80课035" referrerpolicy="no-referrer">
                 </div>
-                <div class="image-caption">3.jpg</div>
+                <div class="image-caption">教你炒股票71-80课035</div>
             </figure>
 <p>现在，我们可以很客观地面对这样一个问题，就是，一个离开5333点的中枢震荡把指数带到了5395点，该震荡对应的线段出现明显的类背驰然后出现明显的破坏，这时候，我们可以很理智地判断当下的形势：</p>
 <p>1、周K线顶分型可能不成立，也就是可以突破5412点，和5395点相差的距离就17点。</p>
@@ -776,7 +776,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2022-10-11T12:20:16.696Z" itemprop="dateUpdated">2022-10-11 20:20:16</time>
+    最后更新时间：<time datetime="2022-10-23T07:01:27.395Z" itemprop="dateUpdated">2022-10-23 15:01:27</time>
 </span><br>
 
 
