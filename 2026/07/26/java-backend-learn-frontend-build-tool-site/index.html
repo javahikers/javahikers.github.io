@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-142124449-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?1c9123028e7e5abc8faae65d030b496e"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="HHaynQDbWoNBIm4JhtWmdzRe5CweKqUcxGjs3zqzRQU">
+    
+    <meta name="google-site-verification" content="kjMK-AE2GfNPjbnE9ku5ceidgR1iPYkpDZSQ5CnLuWc">
+    
+    
+    
+    <title>Java 后端学前端做工具站：从零到上线 | Javahiker&#39;s Homepage | 每天积累一点点！！！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="React,Java,前端,工具站,副业,程序员">
+    <meta name="description" content="Java 后端学前端做工具站：从零到上线 一个 Java 后端程序员，花了三周学 React 做了一个在线 JSON 工具箱，上线第一个月就有了几百个自然搜索访客。这篇文章是我完整的经历和踩坑记录。   为什么做这件事做了几年 Java 后端，日常就是写接口、修 Bug、开会。技术上不算差，但心里一直清楚——上班是打工，网站是自己的。 看到很多独立开发者一个人做网站，挂个 Google AdSen">
+<meta name="keywords" content="React,Java,前端,工具站,副业,程序员">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 后端学前端做工具站：从零到上线">
+<meta property="og:url" content="http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/index.html">
+<meta property="og:site_name" content="Javahiker&#39;s Homepage">
+<meta property="og:description" content="Java 后端学前端做工具站：从零到上线 一个 Java 后端程序员，花了三周学 React 做了一个在线 JSON 工具箱，上线第一个月就有了几百个自然搜索访客。这篇文章是我完整的经历和踩坑记录。   为什么做这件事做了几年 Java 后端，日常就是写接口、修 Bug、开会。技术上不算差，但心里一直清楚——上班是打工，网站是自己的。 看到很多独立开发者一个人做网站，挂个 Google AdSen">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2026-07-26T10:46:50.060Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 后端学前端做工具站：从零到上线">
+<meta name="twitter:description" content="Java 后端学前端做工具站：从零到上线 一个 Java 后端程序员，花了三周学 React 做了一个在线 JSON 工具箱，上线第一个月就有了几百个自然搜索访客。这篇文章是我完整的经历和踩坑记录。   为什么做这件事做了几年 Java 后端，日常就是写接口、修 Bug、开会。技术上不算差，但心里一直清楚——上班是打工，网站是自己的。 看到很多独立开发者一个人做网站，挂个 Google AdSen">
+    
+        <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/logoliu.jpg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brandliu.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/logoliu.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">javahiker</h5>
+          <a href="mailto:javahiker123@gmail.com" title="javahiker123@gmail.com" class="mail">javahiker123@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://github.com/javahikers" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about">
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java 后端学前端做工具站：从零到上线</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java 后端学前端做工具站：从零到上线</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2026-07-26T14:00:00.000Z" itemprop="datePublished" class="page-time">
+  2026-07-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/经验分享/">经验分享</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java-后端学前端做工具站：从零到上线"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java 后端学前端做工具站：从零到上线</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为什么做这件事"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">为什么做这件事</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选技术栈：为什么是-React"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">选技术栈：为什么是 React</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#做什么项目：选赛道"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">做什么项目：选赛道</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#踩坑记录"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">踩坑记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-路由配置"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">1. 路由配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-SEO-问题"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">2. SEO 问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-代码分割"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">3. 代码分割</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上线后的数据"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">上线后的数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#给其他后端程序员的话"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">给其他后端程序员的话</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-java-backend-learn-frontend-build-tool-site" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java 后端学前端做工具站：从零到上线</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2026-07-26 22:00:00" datetime="2026-07-26T14:00:00.000Z" itemprop="datePublished">2026-07-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/经验分享/">经验分享</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Java-后端学前端做工具站：从零到上线"><a href="#Java-后端学前端做工具站：从零到上线" class="headerlink" title="Java 后端学前端做工具站：从零到上线"></a>Java 后端学前端做工具站：从零到上线</h1><blockquote>
+<p>一个 Java 后端程序员，花了三周学 React 做了一个在线 JSON 工具箱，上线第一个月就有了几百个自然搜索访客。这篇文章是我完整的经历和踩坑记录。</p>
+</blockquote>
+<hr>
+<h2 id="为什么做这件事"><a href="#为什么做这件事" class="headerlink" title="为什么做这件事"></a>为什么做这件事</h2><p>做了几年 Java 后端，日常就是写接口、修 Bug、开会。技术上不算差，但心里一直清楚——<strong>上班是打工，网站是自己的。</strong></p>
+<p>看到很多独立开发者一个人做网站，挂个 Google AdSense，一个月几千美金的被动收入。说实话，挺羡慕的。</p>
+<p>但我只会 Java，不会前端。想做网站就得学。</p>
+<h2 id="选技术栈：为什么是-React"><a href="#选技术栈：为什么是-React" class="headerlink" title="选技术栈：为什么是 React"></a>选技术栈：为什么是 React</h2><p>Java 后端要学前端会面临一个选择：</p>
+<ul>
+<li><strong>Vue</strong> — 上手简单，中文文档好</li>
+<li><strong>React</strong> — 生态更大，机会更多</li>
+</ul>
+<p>我选了 React。原因很简单：</p>
+<ol>
+<li>React 的 Hooks 语法让我这个写 Java 的人觉得”嗯，像在写函数式编程”</li>
+<li>React 生态里要什么都有现成的库</li>
+<li>移动端用 React Native 也可以复用，将来有想象空间</li>
+</ol>
+<p>最后选了 React + TypeScript + Vite 的组合。Vite 的冷启动速度太快了，对新手调试体验很好。</p>
+<h2 id="做什么项目：选赛道"><a href="#做什么项目：选赛道" class="headerlink" title="做什么项目：选赛道"></a>做什么项目：选赛道</h2><p>学前端不能光学不做，得找个具体项目来实践。</p>
+<p>我从自己的需求出发：工作中经常要跟 JSON 打交道，格式化、校验、转 CSV 之类的，每次都要找在线工具。</p>
+<p>市面上的 JSON 工具站很多，但要么有广告太烦，要么功能单一，要么不支持中文。<strong>做工具站有一个规律：功能不需要多强，但要全、快、无广告。</strong></p>
+<p>于是决定做一个 <strong>在线 JSON 工具箱</strong>：</p>
+<ul>
+<li>纯前端，不依赖服务器</li>
+<li>支持格式化、压缩、校验、转 CSV、转 YAML</li>
+<li>支持 Java POJO 和 TypeScript 代码生成</li>
+<li>多语言（中文、英文、西班牙语、阿拉伯语）</li>
+<li>PWA 支持，可以当 App 安装</li>
+</ul>
+<h2 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h2><h3 id="1-路由配置"><a href="#1-路由配置" class="headerlink" title="1. 路由配置"></a>1. 路由配置</h3><p>React Router 的学习曲线比想象中陡。特别是嵌套路由和动态路由的组合。翻了好几次文档才搞明白 <code>createBrowserRouter</code> 和 <code>&lt;Outlet&gt;</code> 的配合。</p>
+<h3 id="2-SEO-问题"><a href="#2-SEO-问题" class="headerlink" title="2. SEO 问题"></a>2. SEO 问题</h3><p>做完了才发现，React SPA 做 SEO 天生吃亏。爬虫看不到动态内容。</p>
+<p>解决方案是：</p>
+<ul>
+<li>每个工具页面写独立的内容（title + description + 结构化数据）</li>
+<li>用 <code>react-helmet-async</code> 管理 SEO 标签</li>
+<li>首页加了 FAQ JSON-LD</li>
+<li>内容尽量在页面加载时就渲染，而不是靠 JS 请求</li>
+</ul>
+<p>虽然比不了 SSR，但对工具站来说是够用的。上线一个月 Google 已经索引了十几个页面。</p>
+<h3 id="3-代码分割"><a href="#3-代码分割" class="headerlink" title="3. 代码分割"></a>3. 代码分割</h3><p>一开始整个网站打包下来 736KB，首屏加载太慢了。</p>
+<p>后来用 <code>React.lazy()</code> 做代码分割，每个工具页面独立加载，主包降到了 379KB。配合 PWA 缓存，后续访问几乎瞬间加载。</p>
+<h2 id="上线后的数据"><a href="#上线后的数据" class="headerlink" title="上线后的数据"></a>上线后的数据</h2><ul>
+<li><strong>开发时间：</strong> 约 3 周（晚上和周末）</li>
+<li><strong>工具数量：</strong> 20+ 个 JSON 相关工具</li>
+<li><strong>部署平台：</strong> Vercel（免费版）</li>
+<li><strong>第一天访客：</strong> 0（毫无悬念）</li>
+<li><strong>第一个月：</strong> 开始有自然搜索流量，每天几十个 UV</li>
+<li><strong>收入：</strong> 还没挂广告，等流量稳定再开</li>
+</ul>
+<h2 id="给其他后端程序员的话"><a href="#给其他后端程序员的话" class="headerlink" title="给其他后端程序员的话"></a>给其他后端程序员的话</h2><p>如果你也只会后端、想做网站，我的建议是：</p>
+<ol>
+<li><strong>别想太多，直接做。</strong> React 学习曲线是陡，但做个简单的工具站不需要理解全部原理</li>
+<li><strong>选一个你熟悉的领域做工具。</strong> 你懂这个领域，就知道怎么做得好用</li>
+<li><strong>内容 &gt; 技术。</strong> 工具站最终靠的是 SEO 和内容，技术只要够用就行</li>
+<li><strong>先上线，再优化。</strong> 不要在完美上死磕，先上线看看反馈</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>我做的 JSON 工具箱：</strong><a href="https://jsonprocess.app" target="_blank" rel="noopener">https://jsonprocess.app</a></p>
+<p>20+ 个 JSON 在线工具，纯前端，支持多语言。欢迎使用和提建议。</p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-07-26T10:46:50.060Z" itemprop="dateUpdated">2026-07-26 18:46:50</time>
+</span><br>
+
+
+        
+        本文链接：<a href="/2026/07/26/java-backend-learn-frontend-build-tool-site/" target="_blank" rel="external">http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://javahikers.github.io">
+            <img src="/img/logoliu.jpg" alt="javahiker">
+            javahiker
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/副业/">副业</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具站/">工具站</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序员/">程序员</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/&title=《Java 后端学前端做工具站：从零到上线》 — Javahiker's Homepage&pic=http://javahikers.github.io/img/logoliu.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/&title=《Java 后端学前端做工具站：从零到上线》 — Javahiker's Homepage&source=java知识点整理程序员副业创业" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 后端学前端做工具站：从零到上线》 — Javahiker's Homepage&url=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/&via=http://javahikers.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2026/07/26/best-online-json-tools/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">推荐几个好用的在线 JSON 工具</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/01/02/空气炸锅-薯条/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">空气炸锅-薯条</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>javahiker &copy; 2015 - 2026</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/&title=《Java 后端学前端做工具站：从零到上线》 — Javahiker's Homepage&pic=http://javahikers.github.io/img/logoliu.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/&title=《Java 后端学前端做工具站：从零到上线》 — Javahiker's Homepage&source=java知识点整理程序员副业创业" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 后端学前端做工具站：从零到上线》 — Javahiker's Homepage&url=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/&via=http://javahikers.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://javahikers.github.io/2026/07/26/java-backend-learn-frontend-build-tool-site/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3cwW4iMRAEUP7/p9nrSghU1W0jIj2fogAzfnOwneomj0c8nv+N19+8vvr62f01313nwMDDw8NbTP3zpV9vkEz93RQ/X//zvZI54+Hh4d3mfV7Q80U/fwTtRGfzwcPDw/sFXrJ8fz5k50fk/L54eHh4f4XXHsrzq+Hh4eH9Pq+NUFtMEtq2m8ThrAUPDw8v5uVVpN/5+Up9Dw8PD29dVU9C1U2RLNlyVrPFw8PDu8Br49S28N+2W+V3L96Jh4eHd4G3aRrYFLry+HgTE+Ph4eHd5rWTnjXx5wfo2cZTxBN4eHh4a14SpM7i17ZptT1qF2A8PDy8BW+/WM+e4qw1IY+G8fDw8O7x9tTNgj57TAc6y/Dw8PAO8TbBaxv45o0I7QpfhxF4eHh4JW/fvt9erY0VZiEvHh4e3m3ebOHeNGad3QbevoqHh4d3gZcU5vMCWF4Sax/HpvyGh4eHd4OXF5ySRqtZmb+NOeoGLDw8PLxDvDx4zZPgfJuZRRLFo8fDw8O7xsv3kDY+aBf0fMuJwgs8PDy8a7z2kJ0s/e37T4UReHh4eLd5bTh7tpmgSEraLaHt58LDw8OLebOAoI1WN2Wzdp6P2cfw8PDwuhW1bmPKY4hZ9JBvA/nc8PDw8L7Jm0W9eavBPtSIymx4eHh4R3mnooF2oW/vOztq4+Hh4X2Tt1ma7zUc1EEJHh4e3hd5s8Ai3yryNtZ8RH8r4OHh4S14z3Jsjtf7LaQOOPDw8PAu8NoFdxZbtLBVoWuzn+Dh4eE9u382OmuTyj/bvpp/PSAqgOHh4eFd4G2OyKfaAh43Bh4eHt6P8fJYITkcJzMZHqnx8PDwfoyXxwft0blNFfDw8PC+ydu0W+WLeD7pWcT8tjMCDw8P7yhvdi5NppUftZPN4HFv4OHh4aXjH+XozxQ9pyxMAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1277350950&web_id=1277350950')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
