@@ -36,9 +36,9 @@
     <category term="技术教程" scheme="http://javahikers.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="JavaScript" scheme="http://javahikers.github.io/tags/JavaScript/"/>
-    
     <category term="JSON" scheme="http://javahikers.github.io/tags/JSON/"/>
+    
+    <category term="JavaScript" scheme="http://javahikers.github.io/tags/JavaScript/"/>
     
     <category term="安全" scheme="http://javahikers.github.io/tags/%E5%AE%89%E5%85%A8/"/>
     
@@ -70,9 +70,9 @@
     <category term="技术教程" scheme="http://javahikers.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="JavaScript" scheme="http://javahikers.github.io/tags/JavaScript/"/>
-    
     <category term="JSON" scheme="http://javahikers.github.io/tags/JSON/"/>
+    
+    <category term="JavaScript" scheme="http://javahikers.github.io/tags/JavaScript/"/>
     
     <category term="前端" scheme="http://javahikers.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
@@ -138,13 +138,13 @@
     
     <category term="JSON" scheme="http://javahikers.github.io/tags/JSON/"/>
     
-    <category term="程序员" scheme="http://javahikers.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
-    
     <category term="在线工具" scheme="http://javahikers.github.io/tags/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/"/>
     
-    <category term="效率" scheme="http://javahikers.github.io/tags/%E6%95%88%E7%8E%87/"/>
-    
     <category term="开发工具" scheme="http://javahikers.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="程序员" scheme="http://javahikers.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="效率" scheme="http://javahikers.github.io/tags/%E6%95%88%E7%8E%87/"/>
     
   </entry>
   
@@ -200,11 +200,11 @@
     <category term="技术教程" scheme="http://javahikers.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
     
+    <category term="JSON" scheme="http://javahikers.github.io/tags/JSON/"/>
+    
     <category term="React" scheme="http://javahikers.github.io/tags/React/"/>
     
     <category term="JavaScript" scheme="http://javahikers.github.io/tags/JavaScript/"/>
-    
-    <category term="JSON" scheme="http://javahikers.github.io/tags/JSON/"/>
     
     <category term="前端开发" scheme="http://javahikers.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
