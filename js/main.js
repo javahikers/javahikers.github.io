@@ -110,16 +110,41 @@
                 headerH = header.clientHeight,
                 titles = $('#post-content').querySelectorAll('h1, h2, h3, h4, h5, h6');
 
-            toc.querySelector('a[href="#' + titles[0].id + '"]').parentNode.classList.add('active');
+            // 兼容 hexo 6.x：TOC 链接 href 中的 id 是 encodeURIComponent 编码过的（如 #%E7%A8%8B...），
+            // 而标题元素的 id 是原始中文。直接按原始 id 查询会匹配不到并抛异常，导致页面空白。
+            var findTocLink = function (id) {
+                if (!id) return null;
+                var el = null;
+                try {
+                    el = toc.querySelector('a[href="#' + id + '"]');
+                } catch (e) { el = null; }
+                if (el) return el;
+                try {
+                    el = toc.querySelector('a[href="#' + encodeURIComponent(id) + '"]');
+                } catch (e) { el = null; }
+                if (el) return el;
+                // 兜底：遍历所有 TOC 链接，解码后比较
+                var links = toc.querySelectorAll('a.post-toc-link');
+                for (var li = 0; li < links.length; li++) {
+                    var href = links[li].getAttribute('href');
+                    if (href && decodeURIComponent(href.slice(1)) === id) {
+                        return links[li];
+                    }
+                }
+                return null;
+            };
+
+            var firstLink = findTocLink(titles[0] && titles[0].id);
+            if (firstLink) {
+                firstLink.parentNode.classList.add('active');
+            }
 
             // Make every child shrink initially
             var tocChilds = toc.querySelectorAll('.post-toc-child');
             for (i = 0, len = tocChilds.length; i < len; i++) {
                 tocChilds[i].classList.add('post-toc-shrink');
             }
-            var firstChild =
-                toc.querySelector('a[href="#' + titles[0].id + '"]')
-                    .nextElementSibling;
+            var firstChild = firstLink ? firstLink.nextElementSibling : null;
             if (firstChild) {
                 firstChild.classList.add('post-toc-expand');
                 firstChild.classList.remove('post-toc-shrink');
@@ -155,17 +180,22 @@
                     for (i = 0, len = titles.length; i < len; i++) {
                         if (top > offset(titles[i]).y - headerH - 5) {
                             var prevListEle = toc.querySelector('li.active');
-                            var currListEle = toc.querySelector('a[href="#' + titles[i].id + '"]').parentNode;
+                            var currLink = findTocLink(titles[i].id);
+                            if (!currLink) continue;
+                            var currListEle = currLink.parentNode;
 
                             handleTocActive(prevListEle, currListEle);
                         }
                     }
 
                     if (top < offset(titles[0]).y) {
-                        handleTocActive(
-                            toc.querySelector('li.active'),
-                            toc.querySelector('a[href="#' + titles[0].id + '"]').parentNode
-                        );
+                        var firstCurrLink = findTocLink(titles[0].id);
+                        if (firstCurrLink) {
+                            handleTocActive(
+                                toc.querySelector('li.active'),
+                                firstCurrLink.parentNode
+                            );
+                        }
                     }
                 }
             }
