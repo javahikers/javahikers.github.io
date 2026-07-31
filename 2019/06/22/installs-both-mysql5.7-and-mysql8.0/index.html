@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-142124449-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -27,7 +27,6 @@ ga('send', 'pageview');
     
     <meta name="google-site-verification" content="HHaynQDbWoNBIm4JhtWmdzRe5CweKqUcxGjs3zqzRQU">
     
-    <meta name="google-site-verification" content="kjMK-AE2GfNPjbnE9ku5ceidgR1iPYkpDZSQ5CnLuWc">
     
     
     
@@ -38,14 +37,13 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Mysql,安装部署">
-    <meta name="description" content="下载版本官网下载两个不同的版本进入mysql官网，页面导航 DOWNLOADS=&amp;gt;Mysql Community Server                                                                                                              下载最新版本，目前是8.0.16，根据自己电脑配">
-<meta name="keywords" content="Mysql,安装部署">
+    <meta name="description" content="下载版本官网下载两个不同的版本进入mysql官网，页面导航 DOWNLOADS&#x3D;&gt;Mysql Community Server                                                                                                                下载最新版本，目前是8.0.16，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows环境同时安装mysql5.7和mysql8.0详细教程">
 <meta property="og:url" content="http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/index.html">
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
-<meta property="og:description" content="下载版本官网下载两个不同的版本进入mysql官网，页面导航 DOWNLOADS=&amp;gt;Mysql Community Server                                                                                                              下载最新版本，目前是8.0.16，根据自己电脑配">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="下载版本官网下载两个不同的版本进入mysql官网，页面导航 DOWNLOADS&#x3D;&gt;Mysql Community Server                                                                                                                下载最新版本，目前是8.0.16，">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/001.png">
 <meta property="og:image" content="http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/002.png">
 <meta property="og:image" content="http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/003.png">
@@ -53,10 +51,12 @@ ga('send', 'pageview');
 <meta property="og:image" content="http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/006.png">
 <meta property="og:image" content="http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/007.png">
 <meta property="og:image" content="http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/008.png">
-<meta property="og:updated_time" content="2026-07-26T10:46:50.059Z">
+<meta property="article:published_time" content="2019-06-22T01:23:37.000Z">
+<meta property="article:modified_time" content="2026-07-29T15:30:12.468Z">
+<meta property="article:author" content="javahiker">
+<meta property="article:tag" content="Mysql">
+<meta property="article:tag" content="安装部署">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows环境同时安装mysql5.7和mysql8.0详细教程">
-<meta name="twitter:description" content="下载版本官网下载两个不同的版本进入mysql官网，页面导航 DOWNLOADS=&amp;gt;Mysql Community Server                                                                                                              下载最新版本，目前是8.0.16，根据自己电脑配">
 <meta name="twitter:image" content="http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/001.png">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
@@ -68,12 +68,12 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -85,7 +85,7 @@ ga('send', 'pageview');
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">javahiker</h5>
-          <a href="mailto:javahiker123@gmail.com" title="javahiker123@gmail.com" class="mail">javahiker123@gmail.com</a>
+          <a href="mailto:675435543@qq.com" title="675435543@qq.com" class="mail">675435543@qq.com</a>
         </hgroup>
       </div>
     </div>
@@ -93,42 +93,42 @@ ga('send', 'pageview');
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories">
+              <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 Categories
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="http://github.com/javahikers" target="_blank">
+              <a href="http://github.com/javahikers" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about">
+              <a href="/about"  >
                 <i class="icon icon-lg icon-user"></i>
                 About
               </a>
@@ -175,7 +175,7 @@ ga('send', 'pageview');
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/软件相关/">软件相关</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/">软件相关</a></li></ul>
 
             
         </h5>
@@ -192,51 +192,57 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载版本"><span class="post-toc-number">1.</span> <span class="post-toc-text">下载版本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#官网下载两个不同的版本"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">官网下载两个不同的版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#百度网盘下载两个不同的版本"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">百度网盘下载两个不同的版本</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装mysql前的准备工作"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装mysql前的准备工作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在文件夹的根目录添加配置文件"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">在文件夹的根目录添加配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置环境变量"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">配置环境变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置localhost"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">配置localhost</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装mysql"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装mysql</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化data目录"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">初始化data目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装mysql服务"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">安装mysql服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动服务"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">启动服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改root用户初始密码"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">修改root用户初始密码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#验证是否装好"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">验证是否装好</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库连接工具进行连接验证"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">数据库连接工具进行连接验证</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#同时安装两个MySQL注意事项"><span class="post-toc-number">3.</span> <span class="post-toc-text">同时安装两个MySQL注意事项</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%8B%E8%BD%BD%E7%89%88%E6%9C%AC"><span class="post-toc-number">1.</span> <span class="post-toc-text">下载版本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E4%B8%A4%E4%B8%AA%E4%B8%8D%E5%90%8C%E7%9A%84%E7%89%88%E6%9C%AC"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">官网下载两个不同的版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD%E4%B8%A4%E4%B8%AA%E4%B8%8D%E5%90%8C%E7%9A%84%E7%89%88%E6%9C%AC"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">百度网盘下载两个不同的版本</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85mysql%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装mysql前的准备工作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%B7%BB%E5%8A%A0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">在文件夹的根目录添加配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">配置环境变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AElocalhost"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">配置localhost</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85mysql"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装mysql</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96data%E7%9B%AE%E5%BD%95"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">初始化data目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85mysql%E6%9C%8D%E5%8A%A1"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">安装mysql服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">启动服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BF%AE%E6%94%B9root%E7%94%A8%E6%88%B7%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">修改root用户初始密码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E8%A3%85%E5%A5%BD"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">验证是否装好</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E8%BF%9E%E6%8E%A5%E9%AA%8C%E8%AF%81"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">数据库连接工具进行连接验证</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85%E4%B8%A4%E4%B8%AAMySQL%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">3.</span> <span class="post-toc-text">同时安装两个MySQL注意事项</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-installs-both-mysql5.7-and-mysql8.0" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-installs-both-mysql5.7-and-mysql8.0"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">windows环境同时安装mysql5.7和mysql8.0详细教程</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-06-22 09:23:37" datetime="2019-06-22T01:23:37.000Z" itemprop="datePublished">2019-06-22</time>
+            <time class="post-time" title="2019-06-22 09:23:37" datetime="2019-06-22T01:23:37.000Z"  itemprop="datePublished">2019-06-22</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/软件相关/">软件相关</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/">软件相关</a></li></ul>
 
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
     <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
 </span>
 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="下载版本"><a href="#下载版本" class="headerlink" title="下载版本"></a>下载版本</h1><h2 id="官网下载两个不同的版本"><a href="#官网下载两个不同的版本" class="headerlink" title="官网下载两个不同的版本"></a>官网下载两个不同的版本</h2><p>进入<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">mysql官网</a>，页面导航 DOWNLOADS=&gt;Mysql Community Server</p>
-<div align="center"><br><figure class="image-bubble">
+            <h1 id="下载版本"><a href="#下载版本" class="headerlink" title="下载版本"></a>下载版本</h1><h2 id="官网下载两个不同的版本"><a href="#官网下载两个不同的版本" class="headerlink" title="官网下载两个不同的版本"></a>官网下载两个不同的版本</h2><p>进入<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">mysql官网</a>，页面导航 DOWNLOADS&#x3D;&gt;Mysql Community Server</p>
+<div align="center">
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/06/22/installs-both-mysql5.7-and-mysql8.0/001.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div>
+            </figure>
+</div>
 
 <ul>
 <li><p>下载最新版本，目前是8.0.16，根据自己电脑配置选择64位或是32位</p>
-<div align="center"><br><figure class="image-bubble">
+<div align="center">
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/06/22/installs-both-mysql5.7-and-mysql8.0/002.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div>
+            </figure>
+</div>
 </li>
-<li><p>下载5.7.26版本<br><div align="center"></div></p>
+<li><p>下载5.7.26版本</p>
+<div align="center">
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -244,23 +250,26 @@ ga('send', 'pageview');
                 </div>
                 <div class="image-caption"></div>
             </figure>
-<p><br>官网下载速度非常的快哦，大概只要1到2分钟的样子。</p>
-</li>
+</div>
+官网下载速度非常的快哦，大概只要1到2分钟的样子。</li>
 </ul>
 <hr>
-<h2 id="百度网盘下载两个不同的版本"><a href="#百度网盘下载两个不同的版本" class="headerlink" title="百度网盘下载两个不同的版本"></a>百度网盘下载两个不同的版本</h2><p>如果官网进不去，可以去我分享的百度网盘 <a href="https://pan.baidu.com/s/14SQoI81uRBzrlMvwN0RT9w" target="_blank" rel="noopener">mysql官方文件</a> 下载，提取码：b0po</p>
+<h2 id="百度网盘下载两个不同的版本"><a href="#百度网盘下载两个不同的版本" class="headerlink" title="百度网盘下载两个不同的版本"></a>百度网盘下载两个不同的版本</h2><p>如果官网进不去，可以去我分享的百度网盘 <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/14SQoI81uRBzrlMvwN0RT9w">mysql官方文件</a> 下载，提取码：b0po</p>
 <hr>
 <h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><h2 id="安装mysql前的准备工作"><a href="#安装mysql前的准备工作" class="headerlink" title="安装mysql前的准备工作"></a>安装mysql前的准备工作</h2><h3 id="在文件夹的根目录添加配置文件"><a href="#在文件夹的根目录添加配置文件" class="headerlink" title="在文件夹的根目录添加配置文件"></a>在文件夹的根目录添加配置文件</h3><p>我的压缩包解压之后目录</p>
 <pre><code>E:\software_javahiker\mysql\mysql-5.7.26-winx64
 E:\software_javahiker\mysql\mysql-8.0.16-winx64
-</code></pre><p>在根目录（mysql-5.7.26-winx64目录和mysql-8.0.16-winx64目录）下新建文件my.ini</p>
-<div align="center"><br><figure class="image-bubble">
+</code></pre>
+<p>在根目录（mysql-5.7.26-winx64目录和mysql-8.0.16-winx64目录）下新建文件my.ini</p>
+<div align="center">
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/06/22/installs-both-mysql5.7-and-mysql8.0/004.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div>
+            </figure>
+</div>
 
 <p>my.ini内容如下，文件保存为ANSI格式，否则后面会报错</p>
 <pre><code>[client]
@@ -291,91 +300,94 @@ default_authentication_plugin=mysql_native_password
 [mysql]
 # 设置mysql客户端默认字符集
 default-character-set=utf8mb4
-</code></pre><ul>
-<li>上述涉及到路径的配置，需要改成你自己解压之后的路径，可以看出有5个地方需要修改</li>
-<li>5.7.26版本的my.ini端口配置port=3306。8.0.16版本的my.ini端口配置port=3307，这样在后面启动服务的时候可以避免端口占用的问题。</li>
-<li>补充：可通过以下命令查看windows的端口被哪些程序占用。</li>
+</code></pre>
+<ul>
+<li><p>上述涉及到路径的配置，需要改成你自己解压之后的路径，可以看出有5个地方需要修改</p>
+</li>
+<li><p>5.7.26版本的my.ini端口配置port&#x3D;3306。8.0.16版本的my.ini端口配置port&#x3D;3307，这样在后面启动服务的时候可以避免端口占用的问题。</p>
+</li>
+<li><p>补充：可通过以下命令查看windows的端口被哪些程序占用。</p>
+<p>  C:\Users\javahiker&gt;netstat -ano | findstr 3306<br>TCP    0.0.0.0:3306           0.0.0.0:0              LISTENING       3752<br>  C:\Users\javahiker&gt;tasklist | findstr 3752<br>  mysqld.exe                    3752 Services                   0      4,628 K<br>  C:\Users\javahiker&gt;taskkill -f -pid 3752<br>  错误: 无法终止 PID 为 3752 的进程。<br>  原因: 拒绝访问。<br>  C:\WINDOWS\system32&gt;taskkill -f -pid 3752<br>  成功: 已终止 PID 为 3752 的进程。</p>
+</li>
 </ul>
-<pre><code>C:\Users\javahiker&gt;netstat -ano | findstr 3306
-  TCP    0.0.0.0:3306           0.0.0.0:0              LISTENING       3752
-C:\Users\javahiker&gt;tasklist | findstr 3752
-mysqld.exe                    3752 Services                   0      4,628 K
-C:\Users\javahiker&gt;taskkill -f -pid 3752
-错误: 无法终止 PID 为 3752 的进程。
-原因: 拒绝访问。
-C:\WINDOWS\system32&gt;taskkill -f -pid 3752
-成功: 已终止 PID 为 3752 的进程。
-</code></pre><p>解释：<br>netstat命令查看程序端口为3306的进程号（PID）为3752<br>tasklist命令查看程序mysql.exe的进程号为3752<br>taskkill命令将进程号为3752的程序杀死<br>第一次没能杀死进程，因为是普通用户。第二次”以管理员身份运行”cmd，能成功杀死进程<br>进程被杀之后可以在”服务”里重新启动程序。如果设置了程序启动类型为”自动”，下次电脑重启时，程序会自动启动。</p>
+<p>解释：<br>netstat命令查看程序端口为3306的进程号（PID）为3752<br>tasklist命令查看程序mysql.exe的进程号为3752<br>taskkill命令将进程号为3752的程序杀死<br>第一次没能杀死进程，因为是普通用户。第二次”以管理员身份运行”cmd，能成功杀死进程<br>进程被杀之后可以在”服务”里重新启动程序。如果设置了程序启动类型为”自动”，下次电脑重启时，程序会自动启动。</p>
 <h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>如果要同时配置两个版本的mysql，这一部分请直接跳过。</p>
 <ul>
-<li>右键点击我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量-&gt;系统变量-&gt;新建</li>
-</ul>
-<pre><code>变量名MYSQL_HOME01，路径是E:\software_javahiker\mysql\mysql-5.7.26-winx64
-变量名MYSQL_HOME02，路径是E:\software_javahiker\mysql\mysql-8.0.16-winx64
-</code></pre><ul>
-<li>在系统变量下找到Path，点击编辑-&gt;新建填写</li>
-</ul>
-<pre><code>%MYSQL_HOME01%\bin
-</code></pre><ul>
-<li>注意Path里只添加一种配置。此时通过命令行直接运行的mysql程序，版本将是5.7.26。如果想使用8.0.16的mysql，则将系统变量Path下的 %MYSQL_HOME01%\bin 修改为 %MYSQL_HOME02%\bin</li>
-<li>配置好环境变量之后，不管是在mysql-5.7.26-winx64的bin目录，还是在mysql-8.0.16-winx64的bin下运行mysql命令，都将运行环境变量的路径对应的mysql程序。所以如果想同时配置两个版本的mysql，这里请不要配置环境变量，直接跳过。</li>
+<li><p>右键点击我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量-&gt;系统变量-&gt;新建</p>
+<p>  变量名MYSQL_HOME01，路径是E:\software_javahiker\mysql\mysql-5.7.26-winx64<br>  变量名MYSQL_HOME02，路径是E:\software_javahiker\mysql\mysql-8.0.16-winx64</p>
+</li>
+<li><p>在系统变量下找到Path，点击编辑-&gt;新建填写</p>
+<p>  %MYSQL_HOME01%\bin</p>
+</li>
+<li><p>注意Path里只添加一种配置。此时通过命令行直接运行的mysql程序，版本将是5.7.26。如果想使用8.0.16的mysql，则将系统变量Path下的 %MYSQL_HOME01%\bin 修改为 %MYSQL_HOME02%\bin</p>
+</li>
+<li><p>配置好环境变量之后，不管是在mysql-5.7.26-winx64的bin目录，还是在mysql-8.0.16-winx64的bin下运行mysql命令，都将运行环境变量的路径对应的mysql程序。所以如果想同时配置两个版本的mysql，这里请不要配置环境变量，直接跳过。</p>
+</li>
 </ul>
 <h3 id="配置localhost"><a href="#配置localhost" class="headerlink" title="配置localhost"></a>配置localhost</h3><p>找到C:\Windows\System32\drivers\etc下的hosts文件在尾部添加</p>
 <pre><code>127.0.0.1 localhost
-</code></pre><p>如果已经配置，请忽略</p>
+</code></pre>
+<p>如果已经配置，请忽略</p>
 <hr>
-<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><h3 id="初始化data目录"><a href="#初始化data目录" class="headerlink" title="初始化data目录"></a>初始化data目录</h3><p>初始化命令<code>mysqld --initialize --user=mysql --console</code></p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><h3 id="初始化data目录"><a href="#初始化data目录" class="headerlink" title="初始化data目录"></a>初始化data目录</h3><p>初始化命令<code>mysqld --initialize --user=mysql --console </code></p>
 <pre><code>E:\software_javahiker\mysql\mysql-5.7.26-winx64\bin&gt;mysqld --initialize --user=mysql --console
 2019-06-22T13:21:49.131527Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
 2019-06-22T13:21:51.594843Z 0 [Warning] InnoDB: New log files created, LSN=45790
 2019-06-22T13:21:52.279174Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
 2019-06-22T13:21:52.568183Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: b2e13289-94f0-11e9-9e26-18dbf25874a3.
-2019-06-22T13:21:52.591620Z 0 [Warning] Gtid table is not ready to be used. Table &apos;mysql.gtid_executed&apos; cannot be opened.
+2019-06-22T13:21:52.591620Z 0 [Warning] Gtid table is not ready to be used. Table &#39;mysql.gtid_executed&#39; cannot be opened.
 2019-06-22T13:21:52.605971Z 1 [Note] A temporary password is generated for root@localhost: wngo(g6heVK.
-</code></pre><p>记住root用户的临时密码 wngo(g6heVK.</p>
+</code></pre>
+<p>记住root用户的临时密码 wngo(g6heVK.</p>
 <h3 id="安装mysql服务"><a href="#安装mysql服务" class="headerlink" title="安装mysql服务"></a>安装mysql服务</h3><p>安装命令<code>mysqld --install 服务名称</code>，卸载命令<code>mysqld --remove 服务名称</code></p>
 <ul>
-<li>在cmd上右键-&gt;以管理员身份运行</li>
-<li>如果前面已经配置好环境变量，下面安装另外一个服务时，修改一下环境变量。如果没有配置环境变量，这里进入到目录之后可以直接运行。所以前面有建议大家不要配置环境变量。</li>
-<li>安装mysql服务</li>
+<li><p>在cmd上右键-&gt;以管理员身份运行</p>
+</li>
+<li><p>如果前面已经配置好环境变量，下面安装另外一个服务时，修改一下环境变量。如果没有配置环境变量，这里进入到目录之后可以直接运行。所以前面有建议大家不要配置环境变量。</p>
+</li>
+<li><p>安装mysql服务</p>
+<p>  E:\software_javahiker\mysql\mysql-5.7.26-winx64\bin&gt;mysqld –install MySQL7.0<br>  Service successfully installed.</p>
+</li>
 </ul>
-<pre><code>E:\software_javahiker\mysql\mysql-5.7.26-winx64\bin&gt;mysqld --install MySQL7.0
-Service successfully installed.
-</code></pre><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>启动命令<code>net start 服务名称</code>，停止命令<code>net stop 服务名称</code> </p>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>启动命令<code>net start 服务名称</code>，停止命令<code>net stop 服务名称</code> </p>
 <pre><code>E:\software_javahiker\mysql\mysql-5.7.26-winx64\bin&gt;net start mysql7.0
 MySQL7.0 服务正在启动 .
 MySQL7.0 服务已经启动成功。
-</code></pre><h3 id="修改root用户初始密码"><a href="#修改root用户初始密码" class="headerlink" title="修改root用户初始密码"></a>修改root用户初始密码</h3><p>临时密码用前面保存的密码</p>
+</code></pre>
+<h3 id="修改root用户初始密码"><a href="#修改root用户初始密码" class="headerlink" title="修改root用户初始密码"></a>修改root用户初始密码</h3><p>临时密码用前面保存的密码</p>
 <ul>
-<li>输入登陆命令<code>mysql -uroot -p</code>，密码填写之前保存的临时密码</li>
+<li><p>输入登陆命令<code>mysql -uroot -p</code>，密码填写之前保存的临时密码</p>
+<p>  E:\software_javahiker\mysql\mysql-5.7.26-winx64\bin&gt;mysql -uroot -p<br>  Enter password: ************<br>  Welcome to the MySQL monitor.  Commands end with ; or \g.<br>  Your MySQL connection id is 2<br>  Server version: 5.7.26</p>
+</li>
+<li><p>修改root密码，<code>ALTER user &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;123456&#39;;</code></p>
+<p>  mysql&gt; ALTER user ‘root‘@’localhost’ IDENTIFIED BY ‘123456’;<br>  Query OK, 0 rows affected (0.00 sec)</p>
+</li>
 </ul>
-<pre><code>E:\software_javahiker\mysql\mysql-5.7.26-winx64\bin&gt;mysql -uroot -p
-Enter password: ************
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 2
-Server version: 5.7.26
-</code></pre><ul>
-<li>修改root密码，<code>ALTER user &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;123456&#39;;</code></li>
-</ul>
-<pre><code>mysql&gt; ALTER user &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;
-Query OK, 0 rows affected (0.00 sec)
-</code></pre><p>注意：网上很多人说输入命令<code>mysqladmin -uroot -p临时密码 password 新密码</code> 来修改密码，对于版本8.0.16的mysql来说这种方式不支持</p>
-<p>对于8.0.16版本的mysql，重复上面 <a href="#安装mysql">安装mysql</a> 的过程即可</p>
+<p>注意：网上很多人说输入命令<code>mysqladmin -uroot -p临时密码 password 新密码</code> 来修改密码，对于版本8.0.16的mysql来说这种方式不支持</p>
+<p>对于8.0.16版本的mysql，重复上面 <a href="#%E5%AE%89%E8%A3%85mysql">安装mysql</a> 的过程即可</p>
 <hr>
-<h2 id="验证是否装好"><a href="#验证是否装好" class="headerlink" title="验证是否装好"></a>验证是否装好</h2><h3 id="数据库连接工具进行连接验证"><a href="#数据库连接工具进行连接验证" class="headerlink" title="数据库连接工具进行连接验证"></a>数据库连接工具进行连接验证</h3><p>本人习惯用SQLyog, 进入<a href="https://sqlyog.en.softonic.com/" target="_blank" rel="noopener">官网</a> 下载</p>
-<div align="center"><br><figure class="image-bubble">
+<h2 id="验证是否装好"><a href="#验证是否装好" class="headerlink" title="验证是否装好"></a>验证是否装好</h2><h3 id="数据库连接工具进行连接验证"><a href="#数据库连接工具进行连接验证" class="headerlink" title="数据库连接工具进行连接验证"></a>数据库连接工具进行连接验证</h3><p>本人习惯用SQLyog, 进入<a target="_blank" rel="noopener" href="https://sqlyog.en.softonic.com/">官网</a> 下载</p>
+<div align="center">
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/06/22/installs-both-mysql5.7-and-mysql8.0/006.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div><br>端口改成3307，同样可以连接上<br><br>最后来看看”服务”是不是都正常运行<br><div align="center"><br><figure class="image-bubble">
+            </figure>
+</div>
+端口改成3307，同样可以连接上
+
+<p>最后来看看”服务”是不是都正常运行</p>
+<div align="center">
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/06/22/installs-both-mysql5.7-and-mysql8.0/007.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div>
+            </figure>
+</div>
 
 <hr>
 <h1 id="同时安装两个MySQL注意事项"><a href="#同时安装两个MySQL注意事项" class="headerlink" title="同时安装两个MySQL注意事项"></a>同时安装两个MySQL注意事项</h1><p>安装中途出现错误时，要会google和百度，一般是要修改my.ini配置文件<br>实在搞不定的话3步回到原点，重新填坑</p>
@@ -385,16 +397,18 @@ Query OK, 0 rows affected (0.00 sec)
 <li>删除根目录下的data文件夹。</li>
 </ol>
 <p>data文件夹可能被其他进程占用导致删除不了。删除的正确姿势是：任务管理器-&gt;性能-&gt;打开资源监视器-&gt;关联的句柄处填写data，将下面的进程全部干掉即可删除data文件夹</p>
-<div align="center"><br><figure class="image-bubble">
+<div align="center">
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/06/22/installs-both-mysql5.7-and-mysql8.0/008.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div>
+            </figure>
+</div>
 
 
-<p>这时候，修改my.inf，又可以开开心心地重复 <a href="#安装mysql">安装mysql</a> 的过程了，直到搞定问题，相信你哦，加油！祝你好运！</p>
+<p>这时候，修改my.inf，又可以开开心心地重复 <a href="#%E5%AE%89%E8%A3%85mysql">安装mysql</a> 的过程了，直到搞定问题，相信你哦，加油！祝你好运！</p>
 
         </div>
 
@@ -403,12 +417,12 @@ Query OK, 0 rows affected (0.00 sec)
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2026-07-26T10:46:50.059Z" itemprop="dateUpdated">2026-07-26 18:46:50</time>
+    最后更新时间：<time datetime="2026-07-29T15:30:12.468Z" itemprop="dateUpdated">2026-07-29 23:30:12</time>
 </span><br>
 
 
         
-        本文链接：<a href="/2019/06/22/installs-both-mysql5.7-and-mysql8.0/" target="_blank" rel="external">http://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/</a>
+        本文链接：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
         
     </div>
     
@@ -421,11 +435,15 @@ Query OK, 0 rows affected (0.00 sec)
 </blockquote>
 
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
 
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安装部署/">安装部署</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="tag">安装部署</a></li></ul>
 
 
             
@@ -525,6 +543,32 @@ Query OK, 0 rows affected (0.00 sec)
 
 </article>
 
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        爱你哟~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatliu.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatliu.jpg" data-alipay="/img/alipayliu.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -533,10 +577,10 @@ Query OK, 0 rows affected (0.00 sec)
     <div class="top">
         
 <p>
-    <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_container_site_uv" style='display:none'>
         站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_container_site_pv" style='display:none'>
         站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
@@ -546,7 +590,7 @@ Query OK, 0 rows affected (0.00 sec)
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -612,7 +656,7 @@ Query OK, 0 rows affected (0.00 sec)
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1277350950&web_id=1277350950')

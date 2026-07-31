@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-142124449-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -27,7 +27,6 @@ ga('send', 'pageview');
     
     <meta name="google-site-verification" content="HHaynQDbWoNBIm4JhtWmdzRe5CweKqUcxGjs3zqzRQU">
     
-    <meta name="google-site-verification" content="kjMK-AE2GfNPjbnE9ku5ceidgR1iPYkpDZSQ5CnLuWc">
     
     
     
@@ -39,18 +38,18 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Elasticsearch">
     <meta name="description" content="建索引logstash建索引 去json数据生成网站生成的json格式的数据生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击下载数据 通过logstash导入json数据到Elasticsearch，参考我的博文Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch  使用_bulk api 建立索引 去官网下载数据acco">
-<meta name="keywords" content="Elasticsearch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elasticsearch5.6.9-查询操作">
 <meta property="og:url" content="http://javahikers.github.io/2019/07/13/elasticsearch-query-operations/index.html">
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
 <meta property="og:description" content="建索引logstash建索引 去json数据生成网站生成的json格式的数据生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击下载数据 通过logstash导入json数据到Elasticsearch，参考我的博文Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch  使用_bulk api 建立索引 去官网下载数据acco">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://javahikers.github.io/2019/07/13/elasticsearch-query-operations/001.png">
-<meta property="og:updated_time" content="2026-07-26T10:46:50.057Z">
+<meta property="article:published_time" content="2019-07-13T11:16:13.000Z">
+<meta property="article:modified_time" content="2026-07-29T15:30:12.456Z">
+<meta property="article:author" content="javahiker">
+<meta property="article:tag" content="Elasticsearch">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Elasticsearch5.6.9-查询操作">
-<meta name="twitter:description" content="建索引logstash建索引 去json数据生成网站生成的json格式的数据生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击下载数据 通过logstash导入json数据到Elasticsearch，参考我的博文Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch  使用_bulk api 建立索引 去官网下载数据acco">
 <meta name="twitter:image" content="http://javahikers.github.io/2019/07/13/elasticsearch-query-operations/001.png">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
@@ -62,12 +61,12 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -79,7 +78,7 @@ ga('send', 'pageview');
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">javahiker</h5>
-          <a href="mailto:javahiker123@gmail.com" title="javahiker123@gmail.com" class="mail">javahiker123@gmail.com</a>
+          <a href="mailto:675435543@qq.com" title="675435543@qq.com" class="mail">675435543@qq.com</a>
         </hgroup>
       </div>
     </div>
@@ -87,42 +86,42 @@ ga('send', 'pageview');
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories">
+              <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 Categories
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="http://github.com/javahikers" target="_blank">
+              <a href="http://github.com/javahikers" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about">
+              <a href="/about"  >
                 <i class="icon icon-lg icon-user"></i>
                 About
               </a>
@@ -169,7 +168,7 @@ ga('send', 'pageview');
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/分布式/">分布式</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></li></ul>
 
             
         </h5>
@@ -186,25 +185,26 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#建索引"><span class="post-toc-number">1.</span> <span class="post-toc-text">建索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#logstash建索引"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">logstash建索引</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-bulk-api-建立索引"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用_bulk api 建立索引</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列出所有索引"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">列出所有索引</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简单查询"><span class="post-toc-number">2.</span> <span class="post-toc-text">简单查询</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#条件查询"><span class="post-toc-number">3.</span> <span class="post-toc-text">条件查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#match-all"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">match_all</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#match"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">match</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#聚合查询"><span class="post-toc-number">4.</span> <span class="post-toc-text">聚合查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#aggs-gt-terms"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">aggs-&gt;terms</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#aggs-gt-stats"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">aggs-&gt;stats</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="post-toc-number">1.</span> <span class="post-toc-text">建索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#logstash%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">logstash建索引</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8-bulk-api-%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用_bulk api 建立索引</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%B4%A2%E5%BC%95"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">列出所有索引</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="post-toc-number">2.</span> <span class="post-toc-text">简单查询</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="post-toc-number">3.</span> <span class="post-toc-text">条件查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#match-all"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">match_all</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#match"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">match</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%81%9A%E5%90%88%E6%9F%A5%E8%AF%A2"><span class="post-toc-number">4.</span> <span class="post-toc-text">聚合查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#aggs-gt-terms"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">aggs-&gt;terms</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#aggs-gt-stats"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">aggs-&gt;stats</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-elasticsearch-query-operations" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-elasticsearch-query-operations"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Elasticsearch5.6.9-查询操作</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-07-13 19:16:13" datetime="2019-07-13T11:16:13.000Z" itemprop="datePublished">2019-07-13</time>
+            <time class="post-time" title="2019-07-13 19:16:13" datetime="2019-07-13T11:16:13.000Z"  itemprop="datePublished">2019-07-13</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/分布式/">分布式</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></li></ul>
 
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
     <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
 </span>
 
@@ -212,60 +212,60 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="建索引"><a href="#建索引" class="headerlink" title="建索引"></a>建索引</h1><h2 id="logstash建索引"><a href="#logstash建索引" class="headerlink" title="logstash建索引"></a>logstash建索引</h2><ul>
-<li>去<a href="https://www.json-generator.com" target="_blank" rel="noopener">json数据生成网站</a>生成的json格式的数据<br>生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击<a href="/download/generated.rar">下载数据</a></li>
-<li>通过logstash导入json数据到Elasticsearch，参考我的博文<a href="https://javahikers.github.io/2019/07/14/logstash-reads-json-formatted-file-data/">Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch</a></li>
+<li>去<a target="_blank" rel="noopener" href="https://www.json-generator.com/">json数据生成网站</a>生成的json格式的数据<br>生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击<a href="/download/generated.rar">下载数据</a></li>
+<li>通过logstash导入json数据到Elasticsearch，参考我的博文<a target="_blank" rel="noopener" href="https://javahikers.gitee.io/2019/07/14/logstash-reads-json-formatted-file-data/">Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch</a></li>
 </ul>
 <h2 id="使用-bulk-api-建立索引"><a href="#使用-bulk-api-建立索引" class="headerlink" title="使用_bulk api 建立索引"></a>使用_bulk api 建立索引</h2><ul>
-<li>去官网下载数据<a href="https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json" target="_blank" rel="noopener">accounts.json</a><pre><code>curl -O https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json
-</code></pre></li>
-<li>命令行建索引<pre><code>curl -H &apos;Content-Type: application/json&apos; -XPOST &apos;localhost:9200/javahikers/acount/_bulk?pretty&amp;refresh&apos; --data-binary &apos;@accounts.json&apos;
-</code></pre></li>
-<li>或者postman工具建索引<div><br><figure class="image-bubble">
+<li>去官网下载数据<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json">accounts.json</a><br>  curl -O <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json">https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json</a></li>
+<li>命令行建索引<br>  curl -H ‘Content-Type: application&#x2F;json’ -XPOST ‘localhost:9200&#x2F;javahikers&#x2F;acount&#x2F;_bulk?pretty&amp;refresh’ –data-binary ‘@accounts.json’</li>
+<li>或者postman工具建索引<div>
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/07/13/elasticsearch-query-operations/001.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div>
-
-</li>
+            </figure>
+</div></li>
 </ul>
 <h2 id="列出所有索引"><a href="#列出所有索引" class="headerlink" title="列出所有索引"></a>列出所有索引</h2><p>GET请求postman <code>http://localhost:9200/_cat/indices?v</code><br>GET请求kibana <code>GET /_cat/indices?v</code>,可以省略前面的ip和端口，默认连接本地9200端口,后面介绍都将通过kibana给es发送请求</p>
 <pre><code>health status index            uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 green  open   javahikers       OToEZOxvSbWJVtlEpGVOGg   5   1       1000            0      1.2mb        664.8kb
 green  open   logstashjsontest 7UZWLq26QTyDdVW2QczuyA   5   1         12            0    164.8kb         82.4kb
-</code></pre><p><a href="https://www.cnblogs.com/pilihaotian/p/5830754.html" target="_blank" rel="noopener">ElasticSearch 索引查询使用指南</a></p>
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pilihaotian/p/5830754.html">ElasticSearch 索引查询使用指南</a></p>
 <h1 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h1><p>GET请求 <code>GET javahikers/acount/400</code></p>
 <h1 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h1><p>POST请求 <code>POST javahikers/_search</code><br>下面统一通过 REST request body发送查询参数</p>
 <h2 id="match-all"><a href="#match-all" class="headerlink" title="match_all"></a>match_all</h2><p>查询所有，from起始数据下标，数据下标是从0开始。size返回数据条数。<br>不写from和size默认返回前10条数据</p>
 <pre><code>POST javahikers/_search
-{
-    &quot;query&quot;: {
-        &quot;match_all&quot;: {}
-    },
+&#123;
+    &quot;query&quot;: &#123;
+        &quot;match_all&quot;: &#123;&#125;
+    &#125;,
     &quot;from&quot;: 0,
     &quot;size&quot;: 1
-}
-</code></pre><p>返回结果，根据字段名可以知道其含义<br>took单位毫秒，hits返回的数据</p>
-<pre><code>{
+&#125;
+</code></pre>
+<p>返回结果，根据字段名可以知道其含义<br>took单位毫秒，hits返回的数据</p>
+<pre><code>&#123;
     &quot;took&quot;: 8,
     &quot;timed_out&quot;: false,
-    &quot;_shards&quot;: {
+    &quot;_shards&quot;: &#123;
         &quot;total&quot;: 5,
         &quot;successful&quot;: 5,
         &quot;skipped&quot;: 0,
         &quot;failed&quot;: 0
-    },
-    &quot;hits&quot;: {
+    &#125;,
+    &quot;hits&quot;: &#123;
         &quot;total&quot;: 1000,
         &quot;max_score&quot;: 1,
         &quot;hits&quot;: [
-            {
+            &#123;
                 &quot;_index&quot;: &quot;javahikers&quot;,
                 &quot;_type&quot;: &quot;acount&quot;,
                 &quot;_id&quot;: &quot;25&quot;,
                 &quot;_score&quot;: 1,
-                &quot;_source&quot;: {
+                &quot;_source&quot;: &#123;
                     &quot;account_number&quot;: 25,
                     &quot;balance&quot;: 40540,
                     &quot;firstname&quot;: &quot;Virginia&quot;,
@@ -277,66 +277,72 @@ green  open   logstashjsontest 7UZWLq26QTyDdVW2QczuyA   5   1         12        
                     &quot;email&quot;: &quot;virginiaayala@filodyne.com&quot;,
                     &quot;city&quot;: &quot;Nicholson&quot;,
                     &quot;state&quot;: &quot;PA&quot;
-                }
-            }
+                &#125;
+            &#125;
         ]
-    }
-}
-</code></pre><h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p>带有sort时，查询结果里面_score字段会变成null</p>
+    &#125;
+&#125;
+</code></pre>
+<h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p>带有sort时，查询结果里面_score字段会变成null</p>
 <pre><code>POST javahikers/_search
-{
-  &quot;query&quot;: {
-    &quot;match&quot;: {
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
       &quot;address&quot;: &quot;Avenue&quot;
-    }
-  },
+    &#125;
+  &#125;,
   &quot;sort&quot;: [
-    {
-      &quot;age&quot;: {
+    &#123;
+      &quot;age&quot;: &#123;
         &quot;order&quot;: &quot;desc&quot;
-      }
-    }
+      &#125;
+    &#125;
   ]
-}
-</code></pre><h1 id="聚合查询"><a href="#聚合查询" class="headerlink" title="聚合查询"></a>聚合查询</h1><h2 id="aggs-gt-terms"><a href="#aggs-gt-terms" class="headerlink" title="aggs-&gt;terms"></a>aggs-&gt;terms</h2><pre><code>POST javahikers/_search
-{
-  &quot;aggs&quot;: {
-    &quot;group_by_account_number&quot;: {
-      &quot;terms&quot;: {
+&#125;
+</code></pre>
+<h1 id="聚合查询"><a href="#聚合查询" class="headerlink" title="聚合查询"></a>聚合查询</h1><h2 id="aggs-gt-terms"><a href="#aggs-gt-terms" class="headerlink" title="aggs-&gt;terms"></a>aggs-&gt;terms</h2><pre><code>POST javahikers/_search
+&#123;
+  &quot;aggs&quot;: &#123;
+    &quot;group_by_account_number&quot;: &#123;
+      &quot;terms&quot;: &#123;
         &quot;field&quot;: &quot;age&quot;
-      }
-    },
-    &quot;group_by_balance&quot;: {
-      &quot;terms&quot;: {
+      &#125;
+    &#125;,
+    &quot;group_by_balance&quot;: &#123;
+      &quot;terms&quot;: &#123;
         &quot;field&quot;: &quot;balance&quot;
-      }
-    }
-  }
-}
-</code></pre><p>group_by_account_number的查询结果里面，可以看出默认获取排名前10的分组数数据，<br>这些分组数据数量+doc_count_error_upper_bound+sum_other_doc_count等于全部文档数量</p>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<p>group_by_account_number的查询结果里面，可以看出默认获取排名前10的分组数数据，<br>这些分组数据数量+doc_count_error_upper_bound+sum_other_doc_count等于全部文档数量</p>
 <pre><code>&quot;doc_count_error_upper_bound&quot;: 0,
 &quot;sum_other_doc_count&quot;: 463,
-</code></pre><h2 id="aggs-gt-stats"><a href="#aggs-gt-stats" class="headerlink" title="aggs-&gt;stats"></a>aggs-&gt;stats</h2><pre><code>POST javahikers/_search
-{
-  &quot;aggs&quot;: {
-    &quot;age_count&quot;: {
-      &quot;stats&quot;: {
-        &quot;field&quot;: &quot;age&quot;
-      }
-    }
-  }
-}
-</code></pre><p>查询结果里面，包含了age的最小值，最大值，平均值和总和的计算</p>
-<pre><code>&quot;aggregations&quot;: {
-  &quot;age_count&quot;: {
-    &quot;count&quot;: 1000,
-    &quot;min&quot;: 20,
-    &quot;max&quot;: 40,
-    &quot;avg&quot;: 30.171,
-    &quot;sum&quot;: 30171
-  }
-}
 </code></pre>
+<h2 id="aggs-gt-stats"><a href="#aggs-gt-stats" class="headerlink" title="aggs-&gt;stats"></a>aggs-&gt;stats</h2><pre><code>POST javahikers/_search
+&#123;
+  &quot;aggs&quot;: &#123;
+    &quot;age_count&quot;: &#123;
+      &quot;stats&quot;: &#123;
+        &quot;field&quot;: &quot;age&quot;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<p>查询结果里面，包含了age的最小值，最大值，平均值和总和的计算</p>
+<pre><code>  &quot;aggregations&quot;: &#123;
+    &quot;age_count&quot;: &#123;
+      &quot;count&quot;: 1000,
+      &quot;min&quot;: 20,
+      &quot;max&quot;: 40,
+      &quot;avg&quot;: 30.171,
+      &quot;sum&quot;: 30171
+    &#125;
+  &#125;
+</code></pre>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -344,12 +350,12 @@ green  open   logstashjsontest 7UZWLq26QTyDdVW2QczuyA   5   1         12        
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2026-07-26T10:46:50.057Z" itemprop="dateUpdated">2026-07-26 18:46:50</time>
+    最后更新时间：<time datetime="2026-07-29T15:30:12.456Z" itemprop="dateUpdated">2026-07-29 23:30:12</time>
 </span><br>
 
 
         
-        本文链接：<a href="/2019/07/13/elasticsearch-query-operations/" target="_blank" rel="external">http://javahikers.github.io/2019/07/13/elasticsearch-query-operations/</a>
+        本文链接：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
         
     </div>
     
@@ -362,11 +368,15 @@ green  open   logstashjsontest 7UZWLq26QTyDdVW2QczuyA   5   1         12        
 </blockquote>
 
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
 
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/">Elasticsearch</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li></ul>
 
 
             
@@ -466,6 +476,32 @@ green  open   logstashjsontest 7UZWLq26QTyDdVW2QczuyA   5   1         12        
 
 </article>
 
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        爱你哟~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatliu.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatliu.jpg" data-alipay="/img/alipayliu.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -474,10 +510,10 @@ green  open   logstashjsontest 7UZWLq26QTyDdVW2QczuyA   5   1         12        
     <div class="top">
         
 <p>
-    <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_container_site_uv" style='display:none'>
         站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_container_site_pv" style='display:none'>
         站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
@@ -487,7 +523,7 @@ green  open   logstashjsontest 7UZWLq26QTyDdVW2QczuyA   5   1         12        
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -553,7 +589,7 @@ green  open   logstashjsontest 7UZWLq26QTyDdVW2QczuyA   5   1         12        
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1277350950&web_id=1277350950')

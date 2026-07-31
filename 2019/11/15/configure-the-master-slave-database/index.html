@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-142124449-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -27,7 +27,6 @@ ga('send', 'pageview');
     
     <meta name="google-site-verification" content="HHaynQDbWoNBIm4JhtWmdzRe5CweKqUcxGjs3zqzRQU">
     
-    <meta name="google-site-verification" content="kjMK-AE2GfNPjbnE9ku5ceidgR1iPYkpDZSQ5CnLuWc">
     
     
     
@@ -39,17 +38,18 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Mysql,安装部署">
     <meta name="description" content="配置前需要阅读的文档请先阅读《windows环境同时安装mysql5.7和mysql8.0详细教程》,后面将按照上述教程安装5.7版本的mysql。 准备安装文件和配置文件准备好两份解压之后的文件 mysql-5.7.26-winx64，一个当主库，一个当从库准备好两份配置文件my.ini，主库一份，从库一份主库的配置，点击下载主库配置文件 [client] # 设置mysql客户端连接服务端时默">
-<meta name="keywords" content="Mysql,安装部署">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql5.7配置主从数据库">
 <meta property="og:url" content="http://javahikers.github.io/2019/11/15/configure-the-master-slave-database/index.html">
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
 <meta property="og:description" content="配置前需要阅读的文档请先阅读《windows环境同时安装mysql5.7和mysql8.0详细教程》,后面将按照上述教程安装5.7版本的mysql。 准备安装文件和配置文件准备好两份解压之后的文件 mysql-5.7.26-winx64，一个当主库，一个当从库准备好两份配置文件my.ini，主库一份，从库一份主库的配置，点击下载主库配置文件 [client] # 设置mysql客户端连接服务端时默">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2026-07-26T10:46:50.052Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-15T08:32:40.000Z">
+<meta property="article:modified_time" content="2026-07-29T15:30:12.452Z">
+<meta property="article:author" content="javahiker">
+<meta property="article:tag" content="Mysql">
+<meta property="article:tag" content="安装部署">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql5.7配置主从数据库">
-<meta name="twitter:description" content="配置前需要阅读的文档请先阅读《windows环境同时安装mysql5.7和mysql8.0详细教程》,后面将按照上述教程安装5.7版本的mysql。 准备安装文件和配置文件准备好两份解压之后的文件 mysql-5.7.26-winx64，一个当主库，一个当从库准备好两份配置文件my.ini，主库一份，从库一份主库的配置，点击下载主库配置文件 [client] # 设置mysql客户端连接服务端时默">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
     
@@ -60,12 +60,12 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -77,7 +77,7 @@ ga('send', 'pageview');
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">javahiker</h5>
-          <a href="mailto:javahiker123@gmail.com" title="javahiker123@gmail.com" class="mail">javahiker123@gmail.com</a>
+          <a href="mailto:675435543@qq.com" title="675435543@qq.com" class="mail">675435543@qq.com</a>
         </hgroup>
       </div>
     </div>
@@ -85,42 +85,42 @@ ga('send', 'pageview');
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories">
+              <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 Categories
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="http://github.com/javahikers" target="_blank">
+              <a href="http://github.com/javahikers" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about">
+              <a href="/about"  >
                 <i class="icon icon-lg icon-user"></i>
                 About
               </a>
@@ -167,7 +167,7 @@ ga('send', 'pageview');
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/软件相关/">软件相关</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/">软件相关</a></li></ul>
 
             
         </h5>
@@ -184,32 +184,33 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置前需要阅读的文档"><span class="post-toc-number">1.</span> <span class="post-toc-text">配置前需要阅读的文档</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备安装文件和配置文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备安装文件和配置文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置主库和从库"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置主库和从库</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AE%E5%89%8D%E9%9C%80%E8%A6%81%E9%98%85%E8%AF%BB%E7%9A%84%E6%96%87%E6%A1%A3"><span class="post-toc-number">1.</span> <span class="post-toc-text">配置前需要阅读的文档</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%87%86%E5%A4%87%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%E5%92%8C%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备安装文件和配置文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E5%BA%93%E5%92%8C%E4%BB%8E%E5%BA%93"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置主库和从库</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-configure-the-master-slave-database" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-configure-the-master-slave-database"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">mysql5.7配置主从数据库</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-11-15 16:32:40" datetime="2019-11-15T08:32:40.000Z" itemprop="datePublished">2019-11-15</time>
+            <time class="post-time" title="2019-11-15 16:32:40" datetime="2019-11-15T08:32:40.000Z"  itemprop="datePublished">2019-11-15</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/软件相关/">软件相关</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/">软件相关</a></li></ul>
 
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
     <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
 </span>
 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="配置前需要阅读的文档"><a href="#配置前需要阅读的文档" class="headerlink" title="配置前需要阅读的文档"></a>配置前需要阅读的文档</h1><p>请先阅读<a href="https://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/">《windows环境同时安装mysql5.7和mysql8.0详细教程》</a>,后面将按照上述教程安装5.7版本的mysql。</p>
+            <h1 id="配置前需要阅读的文档"><a href="#配置前需要阅读的文档" class="headerlink" title="配置前需要阅读的文档"></a>配置前需要阅读的文档</h1><p>请先阅读<a target="_blank" rel="noopener" href="https://javahikers.gitee.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/">《windows环境同时安装mysql5.7和mysql8.0详细教程》</a>,后面将按照上述教程安装5.7版本的mysql。</p>
 <h1 id="准备安装文件和配置文件"><a href="#准备安装文件和配置文件" class="headerlink" title="准备安装文件和配置文件"></a>准备安装文件和配置文件</h1><p>准备好两份解压之后的文件 mysql-5.7.26-winx64，一个当主库，一个当从库<br>准备好两份配置文件my.ini，主库一份，从库一份<br>主库的配置，点击<a href="/download/master/my.ini">下载主库配置文件</a></p>
 <pre><code>[client]
 # 设置mysql客户端连接服务端时默认使用的端口
@@ -243,7 +244,8 @@ log-bin-index=master-bin.index
 [mysql]
 # 设置mysql客户端默认字符集
 default-character-set=utf8mb4
-</code></pre><p>从库的配置，点击<a href="/download/slave/my.ini">下载从库配置文件</a></p>
+</code></pre>
+<p>从库的配置，点击<a href="/download/slave/my.ini">下载从库配置文件</a></p>
 <pre><code>[client]
 # 设置mysql客户端连接服务端时默认使用的端口
 port=3307
@@ -276,28 +278,21 @@ relay-log=slave-relay-bin
 [mysql]
 # 设置mysql客户端默认字符集
 default-character-set=utf8mb4
-</code></pre><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>阅读 <a href="https://javahikers.github.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/">教程</a> 进行安装，参照5.7版本进行安装。</p>
+</code></pre>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>阅读 <a target="_blank" rel="noopener" href="https://javahikers.gitee.io/2019/06/22/installs-both-mysql5.7-and-mysql8.0/">教程</a> 进行安装，参照5.7版本进行安装。</p>
 <h1 id="配置主库和从库"><a href="#配置主库和从库" class="headerlink" title="配置主库和从库"></a>配置主库和从库</h1><ol>
-<li>打开主库，查看主库信息</li>
+<li><p>打开主库，查看主库信息</p>
+<p> show master status</p>
+<p> File    Position    Binlog_Do_DB    Binlog_Ignore_DB    Executed_Gtid_Set<br> master-bin.000003   154 </p>
+</li>
+<li><p>打开从库, 根据主库信息配置从库信息后，重启服务</p>
+<p> CHANGE MASTER TO<br> MASTER_HOST &#x3D; ‘localhost’,<br> MASTER_USER &#x3D; ‘root’,<br> MASTER_PASSWORD &#x3D; ‘123456’,<br> MASTER_LOG_FILE &#x3D; ‘master-bin.000003’,<br> MASTER_LOG_POS &#x3D; 154;</p>
+</li>
+<li><p>查看从库信息，保证slave_sql_running和Slave_IO_Running都是yes</p>
+<p> show slave status</p>
+</li>
 </ol>
-<pre><code>show master status
-
-File    Position    Binlog_Do_DB    Binlog_Ignore_DB    Executed_Gtid_Set
-master-bin.000003   154 
-</code></pre><ol start="2">
-<li>打开从库, 根据主库信息配置从库信息后，重启服务</li>
-</ol>
-<pre><code>CHANGE MASTER TO
-MASTER_HOST = &apos;localhost&apos;,
-MASTER_USER = &apos;root&apos;,
-MASTER_PASSWORD = &apos;123456&apos;,
-MASTER_LOG_FILE = &apos;master-bin.000003&apos;,
-MASTER_LOG_POS = 154;
-</code></pre><ol start="3">
-<li>查看从库信息，保证slave_sql_running和Slave_IO_Running都是yes</li>
-</ol>
-<pre><code>show slave status
-</code></pre><p>有疑问请移步至<a href="https://www.cnblogs.com/l-hh/p/9922548.html" target="_blank" rel="noopener">MySQL数据同步，出现Slave_SQL_Running：no和slave_io_running：no问题的解决方法</a></p>
+<p>有疑问请移步至<a target="_blank" rel="noopener" href="https://www.cnblogs.com/l-hh/p/9922548.html">MySQL数据同步，出现Slave_SQL_Running：no和slave_io_running：no问题的解决方法</a></p>
 
         </div>
 
@@ -306,12 +301,12 @@ MASTER_LOG_POS = 154;
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2026-07-26T10:46:50.052Z" itemprop="dateUpdated">2026-07-26 18:46:50</time>
+    最后更新时间：<time datetime="2026-07-29T15:30:12.452Z" itemprop="dateUpdated">2026-07-29 23:30:12</time>
 </span><br>
 
 
         
-        本文链接：<a href="/2019/11/15/configure-the-master-slave-database/" target="_blank" rel="external">http://javahikers.github.io/2019/11/15/configure-the-master-slave-database/</a>
+        本文链接：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
         
     </div>
     
@@ -324,11 +319,15 @@ MASTER_LOG_POS = 154;
 </blockquote>
 
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
 
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安装部署/">安装部署</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="tag">安装部署</a></li></ul>
 
 
             
@@ -428,6 +427,32 @@ MASTER_LOG_POS = 154;
 
 </article>
 
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        爱你哟~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatliu.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatliu.jpg" data-alipay="/img/alipayliu.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -436,10 +461,10 @@ MASTER_LOG_POS = 154;
     <div class="top">
         
 <p>
-    <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_container_site_uv" style='display:none'>
         站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_container_site_pv" style='display:none'>
         站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
@@ -449,7 +474,7 @@ MASTER_LOG_POS = 154;
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -515,7 +540,7 @@ MASTER_LOG_POS = 154;
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1277350950&web_id=1277350950')

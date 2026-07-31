@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-142124449-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -27,7 +27,6 @@ ga('send', 'pageview');
     
     <meta name="google-site-verification" content="HHaynQDbWoNBIm4JhtWmdzRe5CweKqUcxGjs3zqzRQU">
     
-    <meta name="google-site-verification" content="kjMK-AE2GfNPjbnE9ku5ceidgR1iPYkpDZSQ5CnLuWc">
     
     
     
@@ -38,19 +37,20 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="安装部署,Elasticsearch">
-    <meta name="description" content="在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分elasticsearch分布式安装本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击下载文件 进入各自的bin目录，安装并启动服务D:\downloadsoftware\elasticsearch\elasticsearch-5">
-<meta name="keywords" content="安装部署,Elasticsearch">
+    <meta name="description" content="在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分elasticsearch分布式安装本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击[下载文件](&#x2F;download&#x2F;elasticsearch yml文件.rar) 进入各自的bin目录，安装并启动服务D:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elasticsearch5.6.9-elasticsearch集群安装为windows服务">
 <meta property="og:url" content="http://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/index.html">
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
-<meta property="og:description" content="在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分elasticsearch分布式安装本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击下载文件 进入各自的bin目录，安装并启动服务D:\downloadsoftware\elasticsearch\elasticsearch-5">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分elasticsearch分布式安装本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击[下载文件](&#x2F;download&#x2F;elasticsearch yml文件.rar) 进入各自的bin目录，安装并启动服务D:">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png">
-<meta property="og:updated_time" content="2026-07-26T10:46:50.055Z">
+<meta property="article:published_time" content="2019-07-14T06:23:23.000Z">
+<meta property="article:modified_time" content="2026-07-29T15:30:12.454Z">
+<meta property="article:author" content="javahiker">
+<meta property="article:tag" content="安装部署">
+<meta property="article:tag" content="Elasticsearch">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Elasticsearch5.6.9-elasticsearch集群安装为windows服务">
-<meta name="twitter:description" content="在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分elasticsearch分布式安装本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击下载文件 进入各自的bin目录，安装并启动服务D:\downloadsoftware\elasticsearch\elasticsearch-5">
 <meta name="twitter:image" content="http://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
@@ -62,12 +62,12 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -79,7 +79,7 @@ ga('send', 'pageview');
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">javahiker</h5>
-          <a href="mailto:javahiker123@gmail.com" title="javahiker123@gmail.com" class="mail">javahiker123@gmail.com</a>
+          <a href="mailto:675435543@qq.com" title="675435543@qq.com" class="mail">675435543@qq.com</a>
         </hgroup>
       </div>
     </div>
@@ -87,42 +87,42 @@ ga('send', 'pageview');
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories">
+              <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 Categories
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="http://github.com/javahikers" target="_blank">
+              <a href="http://github.com/javahikers" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about">
+              <a href="/about"  >
                 <i class="icon icon-lg icon-user"></i>
                 About
               </a>
@@ -169,7 +169,7 @@ ga('send', 'pageview');
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/分布式/">分布式</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></li></ul>
 
             
         </h5>
@@ -186,49 +186,56 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进入各自的bin目录，安装并启动服务"><span class="post-toc-number">1.</span> <span class="post-toc-text">进入各自的bin目录，安装并启动服务</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">命令</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%BF%9B%E5%85%A5%E5%90%84%E8%87%AA%E7%9A%84bin%E7%9B%AE%E5%BD%95%EF%BC%8C%E5%AE%89%E8%A3%85%E5%B9%B6%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="post-toc-number">1.</span> <span class="post-toc-text">进入各自的bin目录，安装并启动服务</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="post-toc-number">2.</span> <span class="post-toc-text">命令</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-elasticsearch-cluster-installed-for-windows-services" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-elasticsearch-cluster-installed-for-windows-services"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Elasticsearch5.6.9-elasticsearch集群安装为windows服务</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-07-14 14:23:23" datetime="2019-07-14T06:23:23.000Z" itemprop="datePublished">2019-07-14</time>
+            <time class="post-time" title="2019-07-14 14:23:23" datetime="2019-07-14T06:23:23.000Z"  itemprop="datePublished">2019-07-14</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/分布式/">分布式</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></li></ul>
 
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
     <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
 </span>
 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分<a href="https://javahikers.github.io/2019/07/10/elasticsearch-install-and-use/#elasticsearch%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85">elasticsearch分布式安装</a><br>本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击<a href="/download/elasticsearch yml文件.rar">下载文件</a></p>
+            <p>在安装elasticsearch集群之前，请先阅读这篇博文《Elasticsearch5.6.9-安装使用》的这一部分<a target="_blank" rel="noopener" href="https://javahikers.gitee.io/2019/07/10/elasticsearch-install-and-use/#elasticsearch%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85">elasticsearch分布式安装</a><br>本文在它的基础上进行安装，配置文件elasticsearch.yml保持一致。3个文件我已打包好，点击[下载文件](&#x2F;download&#x2F;elasticsearch yml文件.rar)</p>
 <h1 id="进入各自的bin目录，安装并启动服务"><a href="#进入各自的bin目录，安装并启动服务" class="headerlink" title="进入各自的bin目录，安装并启动服务"></a>进入各自的bin目录，安装并启动服务</h1><pre><code>D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9\bin&gt;elasticsearch-service.bat install elasticsearchMaster
 D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9\bin&gt;elasticsearch-service.bat start elasticsearchMaster
 D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave1\bin&gt;elasticsearch-service.bat install elasticsearchSlave1
 D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave1\bin&gt;elasticsearch-service.bat start elasticsearchSlave1
 D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearch-service.bat install elasticsearchSlave2
 D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearch-service.bat start elasticsearchSlave2
-</code></pre><p>安装好之后可以在windows服务窗口查看已安装的服务</p>
-<p><div><br><figure class="image-bubble">
+</code></pre>
+<p>安装好之后可以在windows服务窗口查看已安装的服务</p>
+<div>
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/07/14/elasticsearch-cluster-installed-for-windows-services/001.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div><br>如果遇到安装失败,可能是文件config/jvm.options 里面的参数设置过大导致，将下面的参数调小一点</p>
+            </figure>
+</div>
+如果遇到安装失败,可能是文件config/jvm.options 里面的参数设置过大导致，将下面的参数调小一点
+
 <pre><code>-Xms1g
 -Xmx1g
-</code></pre><h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
+</code></pre>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
 <li>elasticsearch-service.bat install: 安装服务</li>
 <li>elasticsearch-service.bat remove: 删除已安装的服务（如果启动则停止服务） </li>
 <li>elasticsearch-service.bat start: 启动Elasticsearch服务（如果已安装） </li>
@@ -243,12 +250,12 @@ D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearc
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2026-07-26T10:46:50.055Z" itemprop="dateUpdated">2026-07-26 18:46:50</time>
+    最后更新时间：<time datetime="2026-07-29T15:30:12.454Z" itemprop="dateUpdated">2026-07-29 23:30:12</time>
 </span><br>
 
 
         
-        本文链接：<a href="/2019/07/14/elasticsearch-cluster-installed-for-windows-services/" target="_blank" rel="external">http://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/</a>
+        本文链接：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
         
     </div>
     
@@ -261,11 +268,15 @@ D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearc
 </blockquote>
 
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
 
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/">Elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安装部署/">安装部署</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="tag">安装部署</a></li></ul>
 
 
             
@@ -365,6 +376,32 @@ D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearc
 
 </article>
 
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        爱你哟~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatliu.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatliu.jpg" data-alipay="/img/alipayliu.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -373,10 +410,10 @@ D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearc
     <div class="top">
         
 <p>
-    <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_container_site_uv" style='display:none'>
         站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_container_site_pv" style='display:none'>
         站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
@@ -386,7 +423,7 @@ D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearc
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -452,7 +489,7 @@ D:\downloadsoftware\elasticsearch\elasticsearch-5.6.9_slave2\bin&gt;elasticsearc
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1277350950&web_id=1277350950')

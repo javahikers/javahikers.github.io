@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-142124449-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -27,7 +27,6 @@ ga('send', 'pageview');
     
     <meta name="google-site-verification" content="HHaynQDbWoNBIm4JhtWmdzRe5CweKqUcxGjs3zqzRQU">
     
-    <meta name="google-site-verification" content="kjMK-AE2GfNPjbnE9ku5ceidgR1iPYkpDZSQ5CnLuWc">
     
     
     
@@ -38,19 +37,20 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Elasticsearch,Logstash">
-    <meta name="description" content="环境准备 Elasticsearch和Logstash版本：5.6.9 Elasticsearch单机或集群,参考《Elasticsearch5.6.9-elasticsearch集群安装为windows服务》 Logstash客户端，参考《Elasticsearch5.6.9-windows下安装logstash》 json格式的数据，去json数据生成网站生成的json格式的数据。生成的数据不">
-<meta name="keywords" content="Elasticsearch,Logstash">
+    <meta name="description" content="环境准备 Elasticsearch和Logstash版本：5.6.9  Elasticsearch单机或集群,参考《Elasticsearch5.6.9-elasticsearch集群安装为windows服务》  Logstash客户端，参考《Elasticsearch5.6.9-windows下安装logstash》  json格式的数据，去json数据生成网站生成的json格式的数据。生成的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch">
 <meta property="og:url" content="http://javahikers.github.io/2019/07/14/logstash-reads-json-formatted-file-data/index.html">
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
-<meta property="og:description" content="环境准备 Elasticsearch和Logstash版本：5.6.9 Elasticsearch单机或集群,参考《Elasticsearch5.6.9-elasticsearch集群安装为windows服务》 Logstash客户端，参考《Elasticsearch5.6.9-windows下安装logstash》 json格式的数据，去json数据生成网站生成的json格式的数据。生成的数据不">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="环境准备 Elasticsearch和Logstash版本：5.6.9  Elasticsearch单机或集群,参考《Elasticsearch5.6.9-elasticsearch集群安装为windows服务》  Logstash客户端，参考《Elasticsearch5.6.9-windows下安装logstash》  json格式的数据，去json数据生成网站生成的json格式的数据。生成的">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://javahikers.github.io/2019/07/14/logstash-reads-json-formatted-file-data/001.png">
-<meta property="og:updated_time" content="2026-07-26T10:46:50.061Z">
+<meta property="article:published_time" content="2019-07-14T10:18:07.000Z">
+<meta property="article:modified_time" content="2026-07-29T15:30:12.473Z">
+<meta property="article:author" content="javahiker">
+<meta property="article:tag" content="Elasticsearch">
+<meta property="article:tag" content="Logstash">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch">
-<meta name="twitter:description" content="环境准备 Elasticsearch和Logstash版本：5.6.9 Elasticsearch单机或集群,参考《Elasticsearch5.6.9-elasticsearch集群安装为windows服务》 Logstash客户端，参考《Elasticsearch5.6.9-windows下安装logstash》 json格式的数据，去json数据生成网站生成的json格式的数据。生成的数据不">
 <meta name="twitter:image" content="http://javahikers.github.io/2019/07/14/logstash-reads-json-formatted-file-data/001.png">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
@@ -62,12 +62,12 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -79,7 +79,7 @@ ga('send', 'pageview');
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">javahiker</h5>
-          <a href="mailto:javahiker123@gmail.com" title="javahiker123@gmail.com" class="mail">javahiker123@gmail.com</a>
+          <a href="mailto:675435543@qq.com" title="675435543@qq.com" class="mail">675435543@qq.com</a>
         </hgroup>
       </div>
     </div>
@@ -87,42 +87,42 @@ ga('send', 'pageview');
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories">
+              <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 Categories
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="http://github.com/javahikers" target="_blank">
+              <a href="http://github.com/javahikers" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about">
+              <a href="/about"  >
                 <i class="icon icon-lg icon-user"></i>
                 About
               </a>
@@ -169,7 +169,7 @@ ga('send', 'pageview');
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/分布式/">分布式</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></li></ul>
 
             
         </h5>
@@ -186,25 +186,26 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境准备"><span class="post-toc-number">1.</span> <span class="post-toc-text">环境准备</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#导入数据"><span class="post-toc-number">2.</span> <span class="post-toc-text">导入数据</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="post-toc-number">1.</span> <span class="post-toc-text">环境准备</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="post-toc-number">2.</span> <span class="post-toc-text">导入数据</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-logstash-reads-json-formatted-file-data" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-logstash-reads-json-formatted-file-data"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Elasticsearch5.6.9-logstash读取json格式文件数据导入到Elasticsearch</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-07-14 18:18:07" datetime="2019-07-14T10:18:07.000Z" itemprop="datePublished">2019-07-14</time>
+            <time class="post-time" title="2019-07-14 18:18:07" datetime="2019-07-14T10:18:07.000Z"  itemprop="datePublished">2019-07-14</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/分布式/">分布式</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></li></ul>
 
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
     <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
 </span>
 
@@ -212,74 +213,81 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><ol>
-<li>Elasticsearch和Logstash版本：5.6.9</li>
-<li>Elasticsearch单机或集群,参考<a href="https://javahikers.github.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/">《Elasticsearch5.6.9-elasticsearch集群安装为windows服务》</a></li>
-<li>Logstash客户端，参考<a href="https://javahikers.github.io/2019/07/14/install-logstash-on-windows/">《Elasticsearch5.6.9-windows下安装logstash》</a></li>
-<li><p>json格式的数据，去<a href="https://www.json-generator.com" target="_blank" rel="noopener">json数据生成网站</a>生成的json格式的数据。生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击<a href="/download/generated.rar">下载数据</a></p>
-<pre><code>补充：第4点有个坑，json格式的数据末尾需要有回车换行符，否则只能读一条数据。
-</code></pre></li>
+<li><p>Elasticsearch和Logstash版本：5.6.9</p>
+</li>
+<li><p>Elasticsearch单机或集群,参考<a target="_blank" rel="noopener" href="https://javahikers.gitee.io/2019/07/14/elasticsearch-cluster-installed-for-windows-services/">《Elasticsearch5.6.9-elasticsearch集群安装为windows服务》</a></p>
+</li>
+<li><p>Logstash客户端，参考<a target="_blank" rel="noopener" href="https://javahikers.gitee.io/2019/07/14/install-logstash-on-windows/">《Elasticsearch5.6.9-windows下安装logstash》</a></p>
+</li>
+<li><p>json格式的数据，去<a target="_blank" rel="noopener" href="https://www.json-generator.com/">json数据生成网站</a>生成的json格式的数据。生成的数据不能直接使用，需要手动加工一下，我已经加工好了，可以点击<a href="/download/generated.rar">下载数据</a></p>
+<pre><code> 补充：第4点有个坑，json格式的数据末尾需要有回车换行符，否则只能读一条数据。
+</code></pre>
+</li>
 </ol>
 <h1 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h1><ol>
-<li>json.conf配置文件</li>
-</ol>
-<pre><code>#读取json文件
-input{
-    file{
-        #设置json文件路径
-        #指定单一文件，填写绝对路径
-        path =&gt; &quot;D:\downloadsoftware\elasticsearch\jsonData\generated.json&quot;
-        #指定数组文件，填写绝对路径
-        #path =&gt; [&quot;D:\downloadsoftware\elasticsearch\jsonData\generated1.json&quot;,&quot;D:\downloadsoftware\elasticsearch\jsonData\generated2.json&quot;,&quot;D:\downloadsoftware\elasticsearch\jsonData\generated3.json&quot;]
-        start_position=&gt;&quot;beginning&quot;
+<li><p>json.conf配置文件</p>
+<pre><code> #读取json文件
+ input&#123;
+     file&#123;
+         #设置json文件路径
+         #指定单一文件，填写绝对路径
+         path =&gt; &quot;D:\downloadsoftware\elasticsearch\jsonData\generated.json&quot;
+         #指定数组文件，填写绝对路径
+         #path =&gt; [&quot;D:\downloadsoftware\elasticsearch\jsonData\generated1.json&quot;,&quot;D:\downloadsoftware\elasticsearch\jsonData\generated2.json&quot;,&quot;D:\downloadsoftware\elasticsearch\jsonData\generated3.json&quot;]
+         start_position=&gt;&quot;beginning&quot;
+         
+         sincedb_path=&gt;&quot;/dev/null&quot;
+         
+         #设置编码
+         codec=&gt;json&#123;
+             charset=&gt;&quot;UTF-8&quot;
+         &#125;
+     &#125;
+ &#125;
 
-        sincedb_path=&gt;&quot;/dev/null&quot;
+ #过滤格式化数据阶段
+ filter &#123;
+     mutate &#123;
+         #删除无效的字段
+         remove_field=&gt;[&quot;@version&quot;,&quot;@timestamp&quot;,&quot;host&quot;,&quot;path&quot;,&quot;message&quot;]
+     &#125;
+ &#125;
 
-        #设置编码
-        codec=&gt;json{
-            charset=&gt;&quot;UTF-8&quot;
-        }
-    }
-}
-
-#过滤格式化数据阶段
-filter {
-    mutate {
-        #删除无效的字段
-        remove_field=&gt;[&quot;@version&quot;,&quot;@timestamp&quot;,&quot;host&quot;,&quot;path&quot;,&quot;message&quot;]
-    }
-}
-
-#数据输出到ES阶段
-output{
-    #日志输出格式，json_lines;rubydebug等
-    stdout{
-    codec =&gt; rubydebug
-    }
-
-    elasticsearch {
-    #es地址ip端口
-    hosts =&gt; &quot;127.0.0.1:9200&quot;
-    #索引
-    index =&gt; &quot;logstashjsontest&quot;
-    #类型
-    document_type =&gt; &quot;doc&quot;
-    }
-}
-</code></pre><ol start="2">
+ #数据输出到ES阶段
+ output&#123;
+     #日志输出格式，json_lines;rubydebug等
+     stdout&#123;
+     codec =&gt; rubydebug
+     &#125;
+     
+     elasticsearch &#123;
+     #es地址ip端口
+     hosts =&gt; &quot;127.0.0.1:9200&quot;
+     #索引
+     index =&gt; &quot;logstashjsontest&quot;
+     #类型
+     document_type =&gt; &quot;doc&quot;
+     &#125;
+ &#125;
+</code></pre>
+</li>
 <li><p>脚本文件importGenerated.bat<br>下面统一填写绝对路径</p>
-<pre><code>D:\downloadsoftware\elasticsearch\logstash-5.6.9\bin\logstash.bat -f D:\downloadsoftware\elasticsearch\jsonData\json.conf
-</code></pre></li>
+<pre><code> D:\downloadsoftware\elasticsearch\logstash-5.6.9\bin\logstash.bat -f D:\downloadsoftware\elasticsearch\jsonData\json.conf
+</code></pre>
+</li>
 <li><p>json格式的文件generated.json放在json.conf配置文件指定的path目录</p>
 </li>
 </ol>
 <p>运行脚本importGenerated.bat，即可导入数据</p>
-<div><br><figure class="image-bubble">
+<div>
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2019/07/14/logstash-reads-json-formatted-file-data/001.png" alt title referrerpolicy="no-referrer">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br></div>
+            </figure>
+</div>
 
         </div>
 
@@ -288,12 +296,12 @@ output{
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2026-07-26T10:46:50.061Z" itemprop="dateUpdated">2026-07-26 18:46:50</time>
+    最后更新时间：<time datetime="2026-07-29T15:30:12.473Z" itemprop="dateUpdated">2026-07-29 23:30:12</time>
 </span><br>
 
 
         
-        本文链接：<a href="/2019/07/14/logstash-reads-json-formatted-file-data/" target="_blank" rel="external">http://javahikers.github.io/2019/07/14/logstash-reads-json-formatted-file-data/</a>
+        本文链接：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
         
     </div>
     
@@ -306,11 +314,15 @@ output{
 </blockquote>
 
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
 
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/">Elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Logstash/">Logstash</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li></ul>
 
 
             
@@ -410,6 +422,32 @@ output{
 
 </article>
 
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        爱你哟~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatliu.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatliu.jpg" data-alipay="/img/alipayliu.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -418,10 +456,10 @@ output{
     <div class="top">
         
 <p>
-    <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_container_site_uv" style='display:none'>
         站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_container_site_pv" style='display:none'>
         站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
@@ -431,7 +469,7 @@ output{
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -497,7 +535,7 @@ output{
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1277350950&web_id=1277350950')

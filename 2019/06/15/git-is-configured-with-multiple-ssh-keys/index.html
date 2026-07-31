@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-142124449-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -27,7 +27,6 @@ ga('send', 'pageview');
     
     <meta name="google-site-verification" content="HHaynQDbWoNBIm4JhtWmdzRe5CweKqUcxGjs3zqzRQU">
     
-    <meta name="google-site-verification" content="kjMK-AE2GfNPjbnE9ku5ceidgR1iPYkpDZSQ5CnLuWc">
     
     
     
@@ -38,19 +37,20 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="安装部署,git">
-    <meta name="description" content="背景当有多个git账号时，比如：  一个gitee，用于公司内部的工作开发； 两个github，用于自己进行一些开发活动；   步骤生成公钥和私钥对1.生成一个公司用的SSH-Key$ ssh-keygen -t rsa -C &amp;#39;xxxxx@company.com&amp;#39; -f ~/.ssh/gitee_id_rsa2.生成一个github用的SSH-Key$ ssh-keygen -t">
-<meta name="keywords" content="安装部署,git">
+    <meta name="description" content="背景当有多个git账号时，比如：  一个gitee，用于公司内部的工作开发； 两个github，用于自己进行一些开发活动；   步骤生成公钥和私钥对1.生成一个公司用的SSH-Key$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~&#x2F;.ssh&#x2F;gitee_id_rsa2.生成一个github用的SSH-Key$ ssh-keygen -t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git配置多个SSH-Key">
 <meta property="og:url" content="http://javahikers.github.io/2019/06/15/git-is-configured-with-multiple-ssh-keys/index.html">
 <meta property="og:site_name" content="Javahiker&#39;s Homepage">
-<meta property="og:description" content="背景当有多个git账号时，比如：  一个gitee，用于公司内部的工作开发； 两个github，用于自己进行一些开发活动；   步骤生成公钥和私钥对1.生成一个公司用的SSH-Key$ ssh-keygen -t rsa -C &amp;#39;xxxxx@company.com&amp;#39; -f ~/.ssh/gitee_id_rsa2.生成一个github用的SSH-Key$ ssh-keygen -t">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="背景当有多个git账号时，比如：  一个gitee，用于公司内部的工作开发； 两个github，用于自己进行一些开发活动；   步骤生成公钥和私钥对1.生成一个公司用的SSH-Key$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~&#x2F;.ssh&#x2F;gitee_id_rsa2.生成一个github用的SSH-Key$ ssh-keygen -t">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://javahikers.github.io/2019/06/15/git-is-configured-with-multiple-ssh-keys/01.png">
-<meta property="og:updated_time" content="2026-07-26T10:46:50.057Z">
+<meta property="article:published_time" content="2019-06-14T22:42:09.000Z">
+<meta property="article:modified_time" content="2026-07-29T15:30:12.456Z">
+<meta property="article:author" content="javahiker">
+<meta property="article:tag" content="安装部署">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git配置多个SSH-Key">
-<meta name="twitter:description" content="背景当有多个git账号时，比如：  一个gitee，用于公司内部的工作开发； 两个github，用于自己进行一些开发活动；   步骤生成公钥和私钥对1.生成一个公司用的SSH-Key$ ssh-keygen -t rsa -C &amp;#39;xxxxx@company.com&amp;#39; -f ~/.ssh/gitee_id_rsa2.生成一个github用的SSH-Key$ ssh-keygen -t">
 <meta name="twitter:image" content="http://javahikers.github.io/2019/06/15/git-is-configured-with-multiple-ssh-keys/01.png">
     
         <link rel="alternate" type="application/atom+xml" title="Javahiker&#39;s Homepage" href="/atom.xml">
@@ -62,12 +62,12 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -79,7 +79,7 @@ ga('send', 'pageview');
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">javahiker</h5>
-          <a href="mailto:javahiker123@gmail.com" title="javahiker123@gmail.com" class="mail">javahiker123@gmail.com</a>
+          <a href="mailto:675435543@qq.com" title="675435543@qq.com" class="mail">675435543@qq.com</a>
         </hgroup>
       </div>
     </div>
@@ -87,42 +87,42 @@ ga('send', 'pageview');
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories">
+              <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 Categories
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="http://github.com/javahikers" target="_blank">
+              <a href="http://github.com/javahikers" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about">
+              <a href="/about"  >
                 <i class="icon icon-lg icon-user"></i>
                 About
               </a>
@@ -169,7 +169,7 @@ ga('send', 'pageview');
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/其他/">其他</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul>
 
             
         </h5>
@@ -186,25 +186,26 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成公钥和私钥对"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">生成公钥和私钥对</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置config文件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">配置config文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置公钥到git-分别对应3个不同的账户"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">配置公钥到git,分别对应3个不同的账户</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用ssh命令分别测试"><span class="post-toc-number">3.</span> <span class="post-toc-text">用ssh命令分别测试</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载代码注意事项"><span class="post-toc-number">4.</span> <span class="post-toc-text">下载代码注意事项</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%83%8C%E6%99%AF"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="post-toc-number">2.</span> <span class="post-toc-text">步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5%E5%AF%B9"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">生成公钥和私钥对</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AEconfig%E6%96%87%E4%BB%B6"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">配置config文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AE%E5%85%AC%E9%92%A5%E5%88%B0git-%E5%88%86%E5%88%AB%E5%AF%B9%E5%BA%943%E4%B8%AA%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B4%A6%E6%88%B7"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">配置公钥到git,分别对应3个不同的账户</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%94%A8ssh%E5%91%BD%E4%BB%A4%E5%88%86%E5%88%AB%E6%B5%8B%E8%AF%95"><span class="post-toc-number">3.</span> <span class="post-toc-text">用ssh命令分别测试</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%BB%A3%E7%A0%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">4.</span> <span class="post-toc-text">下载代码注意事项</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-git-is-configured-with-multiple-ssh-keys" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-git-is-configured-with-multiple-ssh-keys"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Git配置多个SSH-Key</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-06-15 06:42:09" datetime="2019-06-14T22:42:09.000Z" itemprop="datePublished">2019-06-15</time>
+            <time class="post-time" title="2019-06-15 06:42:09" datetime="2019-06-14T22:42:09.000Z"  itemprop="datePublished">2019-06-15</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/其他/">其他</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul>
 
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
     <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
 </span>
 
@@ -217,12 +218,13 @@ ga('send', 'pageview');
 <li>两个github，用于自己进行一些开发活动；</li>
 </ul>
 <hr>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="生成公钥和私钥对"><a href="#生成公钥和私钥对" class="headerlink" title="生成公钥和私钥对"></a>生成公钥和私钥对</h2><p>1.生成一个公司用的SSH-Key<br><code>$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~/.ssh/gitee_id_rsa</code><br>2.生成一个github用的SSH-Key<br><code>$ ssh-keygen -t rsa -C &#39;xxxxxone@qq.com&#39; -f ~/.ssh/github_id_rsaone</code><br>3.生成另外一个github用的SSH-Key<br><code>$ ssh-keygen -t rsa -C &#39;xxxxxtwo@qq.com&#39; -f ~/.ssh/github_id_rsatwo</code><br>命令运行完之后会在~/.ssh 目录下生成3对公钥和私钥。公钥末尾的值自动跟上面输入的邮箱对应。</p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="生成公钥和私钥对"><a href="#生成公钥和私钥对" class="headerlink" title="生成公钥和私钥对"></a>生成公钥和私钥对</h2><p>1.生成一个公司用的SSH-Key<br><code>$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~/.ssh/gitee_id_rsa</code><br>2.生成一个github用的SSH-Key<br><code>$ ssh-keygen -t rsa -C &#39;xxxxxone@qq.com&#39; -f ~/.ssh/github_id_rsaone</code><br>3.生成另外一个github用的SSH-Key<br><code>$ ssh-keygen -t rsa -C &#39;xxxxxtwo@qq.com&#39; -f ~/.ssh/github_id_rsatwo</code><br>命令运行完之后会在~&#x2F;.ssh 目录下生成3对公钥和私钥。公钥末尾的值自动跟上面输入的邮箱对应。</p>
 <pre><code>gitee_id_rsa gitee_id_rsa.pub
 github_id_rsaone github_id_rsaone.pub
 github_id_rsatwo github_id_rsatwo.pub
-</code></pre><hr>
-<h2 id="配置config文件"><a href="#配置config文件" class="headerlink" title="配置config文件"></a>配置config文件</h2><p>在 ~/.ssh 目录下新建一个config文件，~对应windows下的用户目录，添加以下内容。<br>其中HostName为git服务器的域名，Host为下载代码时需要替换的域名。IdentityFile指定私钥的路径，私钥名称跟上面保持一致。</p>
+</code></pre>
+<hr>
+<h2 id="配置config文件"><a href="#配置config文件" class="headerlink" title="配置config文件"></a>配置config文件</h2><p>在 <del>&#x2F;.ssh 目录下新建一个config文件，</del>对应windows下的用户目录，添加以下内容。<br>其中HostName为git服务器的域名，Host为下载代码时需要替换的域名。IdentityFile指定私钥的路径，私钥名称跟上面保持一致。</p>
 <pre><code># gitee
 Host gitee.com
 HostName gitee.com
@@ -238,29 +240,37 @@ Host github.com.two
 HostName github.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/github_id_rsatwo
-</code></pre><hr>
-<h2 id="配置公钥到git-分别对应3个不同的账户"><a href="#配置公钥到git-分别对应3个不同的账户" class="headerlink" title="配置公钥到git,分别对应3个不同的账户"></a>配置公钥到git,分别对应3个不同的账户</h2><p>登录<a href="https://github.com/" title="github的网址" target="_blank" rel="noopener">github</a>，配置公钥</p>
-<div align="center"><br><img src="/2019/06/15/git-is-configured-with-multiple-ssh-keys/01.png" alt="不好啦，图片不见啦~~" title="每天进步一点点"><br></div>
+</code></pre>
+<hr>
+<h2 id="配置公钥到git-分别对应3个不同的账户"><a href="#配置公钥到git-分别对应3个不同的账户" class="headerlink" title="配置公钥到git,分别对应3个不同的账户"></a>配置公钥到git,分别对应3个不同的账户</h2><p>登录<a target="_blank" rel="noopener" href="https://github.com/" title="github的网址">github</a>，配置公钥</p>
+<div align="center">
+<img src="/2019/06/15/git-is-configured-with-multiple-ssh-keys/01.png" alt="不好啦，图片不见啦~~" title="每天进步一点点">
+</div>
 
 <hr>
 <h1 id="用ssh命令分别测试"><a href="#用ssh命令分别测试" class="headerlink" title="用ssh命令分别测试"></a>用ssh命令分别测试</h1><pre><code>$ ssh -T git@gitee.com
 $ ssh -T git@github.com.one
 $ ssh -T git@github.com.two
-</code></pre><p>这里以github为例，成功的话会返回下面内容</p>
-<pre><code>Hi javahikers! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><hr>
-<h1 id="下载代码注意事项"><a href="#下载代码注意事项" class="headerlink" title="下载代码注意事项"></a>下载代码注意事项</h1><p>1.路径以http://开头，可以下载。提交代码时,会提示没有权限。</p>
+</code></pre>
+<p>这里以github为例，成功的话会返回下面内容</p>
+<pre><code>Hi javahikers! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<hr>
+<h1 id="下载代码注意事项"><a href="#下载代码注意事项" class="headerlink" title="下载代码注意事项"></a>下载代码注意事项</h1><p>1.路径以http:&#x2F;&#x2F;开头，可以下载。提交代码时,会提示没有权限。</p>
 <pre><code>git clone https://github.com/javahikers/algorithms-studying.git
-</code></pre><p>2.路径以git@ 开头，下载代码时会进行权限校验。只有登录<a href="https://github.com/" title="github的网址" target="_blank" rel="noopener">github</a>之后才能切换成git开头的路径。如果自己开发，推荐使用这种方式。<br>将github.com替换成config文件中配置的Host。</p>
+</code></pre>
+<p>2.路径以git@ 开头，下载代码时会进行权限校验。只有登录<a target="_blank" rel="noopener" href="https://github.com/" title="github的网址">github</a>之后才能切换成git开头的路径。如果自己开发，推荐使用这种方式。<br>将github.com替换成config文件中配置的Host。</p>
 <pre><code>git clone git@github.com.two:javahikers/algorithms-studying.git
-</code></pre><p>3.不变更路径会提示没有权限下载</p>
+</code></pre>
+<p>3.不变更路径会提示没有权限下载</p>
 <pre><code>$ git clone git@github.com:javahikers/algorithms-studying.git
-Cloning into &apos;algorithms-studying&apos;...
+Cloning into &#39;algorithms-studying&#39;...
 git@github.com: Permission denied (publickey).
 fatal: Could not read from remote repository.
 Please make sure you have the correct access rights
 and the repository exists.
-</code></pre><hr>
+</code></pre>
+<hr>
 
         </div>
 
@@ -269,12 +279,12 @@ and the repository exists.
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2026-07-26T10:46:50.057Z" itemprop="dateUpdated">2026-07-26 18:46:50</time>
+    最后更新时间：<time datetime="2026-07-29T15:30:12.456Z" itemprop="dateUpdated">2026-07-29 23:30:12</time>
 </span><br>
 
 
         
-        本文链接：<a href="/2019/06/15/git-is-configured-with-multiple-ssh-keys/" target="_blank" rel="external">http://javahikers.github.io/2019/06/15/git-is-configured-with-multiple-ssh-keys/</a>
+        本文链接：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
         
     </div>
     
@@ -287,11 +297,15 @@ and the repository exists.
 </blockquote>
 
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
 
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安装部署/">安装部署</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="tag">安装部署</a></li></ul>
 
 
             
@@ -391,6 +405,32 @@ and the repository exists.
 
 </article>
 
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        爱你哟~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatliu.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatliu.jpg" data-alipay="/img/alipayliu.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -399,10 +439,10 @@ and the repository exists.
     <div class="top">
         
 <p>
-    <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_container_site_uv" style='display:none'>
         站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_container_site_pv" style='display:none'>
         站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
@@ -412,7 +452,7 @@ and the repository exists.
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -478,7 +518,7 @@ and the repository exists.
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1277350950&web_id=1277350950')
